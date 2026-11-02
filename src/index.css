@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom theme colors for Midnight Navy mode */
+html.midnight {
+  --bg-color: #0b1329;
+  --surface-color: #111e3f;
+  --surface-border: #1e3a8a;
+  background-color: #0b1329;
+  color: #f1f5f9;
+}
+
+html.midnight .bg-white {
+  background-color: #111e3f !important;
+}
+
+html.midnight .bg-slate-50,
+html.midnight .bg-slate-50\/50 {
+  background-color: #16244d !important;
+}
+
+html.midnight .border-slate-200,
+html.midnight .border-slate-100 {
+  border-color: #1e3a8a !important;
+}
+
+html.midnight .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+html.midnight .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+html.midnight .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}

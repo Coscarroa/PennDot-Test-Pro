@@ -1,0 +1,6 @@
+{
+  "name": "PennDOT PA Driver Exam Pro",
+  "description": "Simulador oficial y completo del examen de conducir de Pensilvania PennDOT en español e inglés, con prácticas interactivas, catálogo de señales viales, simulador con tiempo, seguimiento de progreso diario, foro comunitario y sincronización en la nube.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
