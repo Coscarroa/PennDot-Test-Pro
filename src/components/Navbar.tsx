@@ -97,48 +97,40 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full border-b backdrop-blur-md transition-colors duration-200 bg-white/95 border-slate-200 dark:bg-slate-900/95 dark:border-slate-800">
       {/* Top Banner: PennDOT Branding & Utility Controls */}
-      {/* Top Banner: PennDOT Branding & 2-Row Utility Controls */}
+      {/* Top Banner: PennDOT Branding Centralized & 2-Row Utility Controls */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-3 py-2.5 sm:py-3">
-          {/* Logo & Brand with Uploaded Official App Icon */}
-          <div className="flex items-center gap-3 w-full lg:w-auto justify-between lg:justify-start">
-            <div className="flex items-center gap-3">
-              <img
-                src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
-                alt="PennDOT PA Driver Exam Pro"
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-contain shadow-md shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-0.5"
-              />
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white">
-                    PennDOT <span className="text-blue-600 dark:text-blue-400">Exam Pro</span>
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
-                    PUB 95 Official
-                  </span>
-                </div>
-                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
-                  {isEs
-                    ? 'Manual del Conductor de Pensilvania • Simulador & Práctica'
-                    : 'Pennsylvania Driver License Knowledge Test Simulator'}
-                </p>
+        <div className="flex flex-col items-center justify-center gap-3 py-3">
+          {/* Centralized Logo & Brand Title */}
+          <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-2.5 sm:gap-3.5">
+            <img
+              src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+              alt="PennDOT PA Driver Exam Pro"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-contain shadow-lg shadow-blue-500/20 shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
+            />
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span className="font-black text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">
+                  PennDOT <span className="text-blue-600 dark:text-blue-400">PA Driver Exam Pro</span>
+                </span>
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-extrabold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300 border border-amber-300 dark:border-amber-700">
+                  PUB 95 Official
+                </span>
               </div>
-            </div>
-
-            {/* Quick Mobile Streak Badge */}
-            <div className="flex lg:hidden items-center gap-1 px-2.5 py-1 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 rounded-full font-bold text-xs">
-              <span className="text-sm">🔥</span>
-              <span>{streakDays}d</span>
+              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
+                {isEs
+                  ? 'Manual del Conductor de Pensilvania • Simulador Oficial & Práctica Interactiva'
+                  : 'Pennsylvania Driver License Knowledge Test Simulator & Practice'}
+              </p>
             </div>
           </div>
 
-          {/* Right Action Icons & Toggles: ORGANIZED INTO 2 ROWS (Auto Responsive) */}
-          <div className="flex flex-col items-center lg:items-end gap-1.5 w-full lg:w-auto">
+          {/* Action Icons & Toggles: ORGANIZED INTO 2 CENTERED ROWS (Auto Responsive) */}
+          <div className="flex flex-col items-center justify-center gap-2 w-full pt-0.5">
             {/* ROW 1: Status & Core Settings (En Línea, Racha, Idioma, Sonido, Tema) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-1.5 sm:gap-2 w-full">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
               {/* 1. En Línea / Offline status badge */}
               <div
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border transition-all ${
                   isOnline
                     ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800'
                     : 'bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950/40 dark:text-amber-400 dark:border-amber-800'
@@ -151,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {/* 2. Daily Streak */}
               <div
-                className="hidden lg:flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 rounded-full font-bold text-xs"
+                className="flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20 rounded-full font-extrabold text-xs"
                 title={isEs ? `Racha de estudio: ${streakDays} días consecutivos` : `Study streak: ${streakDays} consecutive days`}
               >
                 <span className="text-base leading-none">🔥</span>
@@ -165,7 +157,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setLanguage(nextLang);
                   sound.playCorrect();
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 text-xs font-bold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors shadow-sm cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors shadow-sm cursor-pointer"
                 title={isEs ? 'Switch to English' : 'Cambiar a Español'}
               >
                 <span className="text-sm">{language === 'es' ? '🇺🇸' : '🇪🇸'}</span>
@@ -180,16 +172,26 @@ export const Navbar: React.FC<NavbarProps> = ({
                   sound.enabled = next;
                   if (next) sound.playCorrect();
                 }}
-                className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-xs font-semibold"
                 title={soundEnabled ? (isEs ? 'Silenciar sonidos' : 'Mute sounds') : (isEs ? 'Activar sonidos' : 'Enable sounds')}
               >
-                {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" /> : <VolumeX className="w-3.5 h-3.5 opacity-50" />}
+                {soundEnabled ? (
+                  <>
+                    <Volume2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                    <span className="hidden sm:inline">{isEs ? 'Sonido' : 'Sound'}</span>
+                  </>
+                ) : (
+                  <>
+                    <VolumeX className="w-3.5 h-3.5 opacity-50" />
+                    <span className="hidden sm:inline opacity-70">{isEs ? 'Silencio' : 'Muted'}</span>
+                  </>
+                )}
               </button>
 
               {/* 5. Theme Toggle */}
               <button
                 onClick={cycleTheme}
-                className="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-xs font-semibold"
                 title={
                   theme === 'light'
                     ? 'Modo Claro (Click para Oscuro)'
@@ -199,32 +201,41 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }
               >
                 {theme === 'light' ? (
-                  <Sun className="w-3.5 h-3.5 text-amber-500" />
+                  <>
+                    <Sun className="w-3.5 h-3.5 text-amber-500" />
+                    <span className="hidden sm:inline">Claro</span>
+                  </>
                 ) : theme === 'dark' ? (
-                  <Moon className="w-3.5 h-3.5 text-blue-400" />
+                  <>
+                    <Moon className="w-3.5 h-3.5 text-blue-400" />
+                    <span className="hidden sm:inline">Oscuro</span>
+                  </>
                 ) : (
-                  <Palette className="w-3.5 h-3.5 text-indigo-400" />
+                  <>
+                    <Palette className="w-3.5 h-3.5 text-indigo-400" />
+                    <span className="hidden sm:inline">Midnight</span>
+                  </>
                 )}
               </button>
             </div>
 
             {/* ROW 2: Community & Action Utilities (Notificaciones, Sincronizar, Manual PDF, Donar) */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-end gap-1.5 sm:gap-2 w-full">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
               {/* 6. Notifications Button */}
               <button
                 onClick={onOpenNotifications}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition-colors relative cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition-colors relative cursor-pointer"
                 title={isEs ? 'Notificaciones y Recordatorios Diarios' : 'Push Notifications & Daily Reminders'}
               >
-                <Bell className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">{isEs ? 'Avisos' : 'Alerts'}</span>
+                <Bell className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                <span>{isEs ? 'Avisos' : 'Alerts'}</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
               </button>
 
               {/* 7. Cloud Sync Button */}
               <button
                 onClick={onOpenSync}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors shadow-sm cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors shadow-sm cursor-pointer"
                 title={isEs ? 'Sincronizar entre dispositivos (Nube)' : 'Cloud Multi-Device Sync'}
               >
                 <Cloud className="w-3.5 h-3.5" />
@@ -234,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* 8. Official PDF Handbook Link */}
               <button
                 onClick={onOpenManual}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-xs transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-xs transition-colors cursor-pointer"
                 title="Manual Oficial PennDOT PDF"
               >
                 <FileText className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
@@ -244,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* 9. Donations Button */}
               <button
                 onClick={onOpenDonations}
-                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs transition-all shadow-sm hover:shadow-rose-500/20 cursor-pointer"
+                className="flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs transition-all shadow-sm hover:shadow-rose-500/20 cursor-pointer"
                 title={isEs ? 'Apoyar el proyecto con una donación (Zelle / Cripto)' : 'Support with a donation (Zelle / Crypto)'}
               >
                 <Heart className="w-3.5 h-3.5 fill-white" />

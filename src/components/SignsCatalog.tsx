@@ -220,17 +220,30 @@ export const SignsCatalog: React.FC<SignsCatalogProps> = ({ language }) => {
             <div className="flex flex-wrap gap-2">
               {categories.map(c => {
                 const active = activeCategory === c.id;
+                const count =
+                  c.id === 'all'
+                    ? OFFICIAL_TRAFFIC_SIGNS.length
+                    : OFFICIAL_TRAFFIC_SIGNS.filter(s => s.category === c.id).length;
                 return (
                   <button
                     key={c.id}
                     onClick={() => setActiveCategory(c.id)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                       active
                         ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-blue-400'
                     }`}
                   >
-                    {isEs ? c.labelEs : c.labelEn}
+                    <span>{isEs ? c.labelEs : c.labelEn}</span>
+                    <span
+                      className={`px-1.5 py-0.2 rounded-full text-[10px] font-extrabold ${
+                        active
+                          ? 'bg-white/20 text-white'
+                          : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                      }`}
+                    >
+                      {count}
+                    </span>
                   </button>
                 );
               })}

@@ -27,6 +27,7 @@ import {
 import { Question, Language, ExamResult, UserDataState, DifficultyLevel } from '../types';
 import { generatePennDOTMockExam } from '../data/questionsData';
 import { RoadSignSvg } from './RoadSignSvg';
+import { PassingBadgeCertificate } from './PassingBadgeCertificate';
 import { sound } from '../utils/sound';
 import { tts } from '../utils/speech';
 import { recordExamResult, toggleBookmarkQuestion } from '../utils/storage';
@@ -583,6 +584,19 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
               </div>
             </div>
           </div>
+
+          {/* Celebratory Achievement Badge with High-Res PNG Download (When Passed) */}
+          {passed && (
+            <PassingBadgeCertificate
+              score={score}
+              totalQuestions={questions.length}
+              missedCount={missedQuestions.length}
+              percentage={percentage}
+              difficulty={difficulty}
+              durationSeconds={totalDuration - secondsRemaining}
+              language={language}
+            />
+          )}
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-6 mb-6">

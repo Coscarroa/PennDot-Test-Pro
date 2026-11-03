@@ -1549,6 +1549,717 @@ export const RoadSignSvg: React.FC<RoadSignSvgProps> = ({
         </svg>
       );
 
+    case 'sign-one-way':
+      return (
+        <svg
+          width={size * 1.5}
+          height={size * 0.75}
+          viewBox="0 0 120 60"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="2" y="2" width="116" height="56" rx="4" fill="#000000" stroke="#ffffff" strokeWidth="2" />
+          {/* Arrow pointing right */}
+          <polygon points="12,18 78,18 78,8 108,30 78,52 78,42 12,42" fill="#ffffff" />
+          <text
+            x="48"
+            y="36"
+            fill="#000000"
+            fontSize="14"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+            letterSpacing="1"
+          >
+            ONE WAY
+          </text>
+        </svg>
+      );
+
+    case 'sign-no-left-turn':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="4" y="4" width="92" height="92" rx="8" fill="#ffffff" stroke="#000000" strokeWidth="3" />
+          {/* Left turn arrow */}
+          <path
+            d="M 68,75 L 68,52 C 68,40 58,35 44,35 L 36,35"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="8"
+            strokeLinecap="round"
+          />
+          <polygon points="38,25 24,35 38,45" fill="#000000" />
+          {/* Red prohibition circle & slash */}
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#dc2626" strokeWidth="7" />
+          <line x1="23" y1="23" x2="77" y2="77" stroke="#dc2626" strokeWidth="7" />
+        </svg>
+      );
+
+    case 'sign-lane-control-left':
+      return (
+        <svg
+          width={size * 0.85}
+          height={size * 1.15}
+          viewBox="0 0 70 95"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="64" height="89" rx="6" fill="#ffffff" stroke="#000000" strokeWidth="3" />
+          {/* Left turn arrow */}
+          <path
+            d="M 45,62 L 45,40 C 45,28 36,25 24,25 L 18,25"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="6"
+            strokeLinecap="round"
+          />
+          <polygon points="20,17 8,25 20,33" fill="#000000" />
+          <text
+            x="35"
+            y="78"
+            fill="#000000"
+            fontSize="14"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+            letterSpacing="1"
+          >
+            ONLY
+          </text>
+        </svg>
+      );
+
+    case 'sign-no-parking':
+      return (
+        <svg
+          width={size * 0.85}
+          height={size * 1.15}
+          viewBox="0 0 70 95"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="64" height="89" rx="6" fill="#ffffff" stroke="#dc2626" strokeWidth="4" />
+          <text
+            x="35"
+            y="25"
+            fill="#dc2626"
+            fontSize="12"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            NO
+          </text>
+          <text
+            x="35"
+            y="42"
+            fill="#dc2626"
+            fontSize="12"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            PARKING
+          </text>
+          <text
+            x="35"
+            y="60"
+            fill="#dc2626"
+            fontSize="10"
+            fontWeight="800"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            ANY
+          </text>
+          <text
+            x="35"
+            y="75"
+            fill="#dc2626"
+            fontSize="10"
+            fontWeight="800"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            TIME
+          </text>
+          {/* Double arrow at bottom */}
+          <path d="M 15,84 L 55,84 M 20,81 L 15,84 L 20,87 M 50,81 L 55,84 L 50,87" stroke="#dc2626" strokeWidth="2.5" fill="none" />
+        </svg>
+      );
+
+    case 'sign-no-trucks':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="4" y="4" width="92" height="92" rx="8" fill="#ffffff" stroke="#000000" strokeWidth="3" />
+          {/* Truck silhouette */}
+          <rect x="25" y="40" width="30" height="20" fill="#000000" rx="1" />
+          <path d="M 55,46 L 68,46 L 73,53 L 73,60 L 55,60 Z" fill="#000000" />
+          <circle cx="35" cy="62" r="5" fill="#000000" stroke="#ffffff" strokeWidth="1.5" />
+          <circle cx="65" cy="62" r="5" fill="#000000" stroke="#ffffff" strokeWidth="1.5" />
+          {/* Red prohibition circle & slash */}
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#dc2626" strokeWidth="7" />
+          <line x1="23" y1="23" x2="77" y2="77" stroke="#dc2626" strokeWidth="7" />
+        </svg>
+      );
+
+    case 'sign-handicap-parking':
+      return (
+        <svg
+          width={size * 0.85}
+          height={size * 1.15}
+          viewBox="0 0 70 95"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="64" height="89" rx="6" fill="#ffffff" stroke="#16a34a" strokeWidth="3" />
+          <text
+            x="35"
+            y="18"
+            fill="#16a34a"
+            fontSize="8"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            RESERVED
+          </text>
+          <text
+            x="35"
+            y="28"
+            fill="#16a34a"
+            fontSize="8"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            PARKING
+          </text>
+          {/* Blue wheelchair box */}
+          <rect x="15" y="34" width="40" height="40" rx="4" fill="#2563eb" />
+          <circle cx="35" cy="43" r="3.5" fill="#ffffff" />
+          <path
+            d="M 35,48 L 35,59 L 45,59 M 35,52 L 43,52"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 33,67 C 27,67 25,58 29,53 C 32,50 37,50 39,54"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="3"
+            strokeLinecap="round"
+          />
+          <text
+            x="35"
+            y="87"
+            fill="#16a34a"
+            fontSize="7"
+            fontWeight="800"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            $50 - $200 FINE
+          </text>
+        </svg>
+      );
+
+    case 'sign-stop-ahead':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Arrow pointing up */}
+          <polygon points="50,22 40,34 46,34 46,45 54,45 54,34 60,34" fill="#000000" />
+          {/* Mini STOP Octagon */}
+          <polygon
+            points="42,50 58,50 68,60 68,76 58,86 42,86 32,76 32,60"
+            fill="#dc2626"
+            stroke="#ffffff"
+            strokeWidth="1.5"
+          />
+          <text
+            x="50"
+            y="71"
+            fill="#ffffff"
+            fontSize="10"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            STOP
+          </text>
+        </svg>
+      );
+
+    case 'sign-yield-ahead':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Arrow pointing up */}
+          <polygon points="50,22 40,34 46,34 46,45 54,45 54,34 60,34" fill="#000000" />
+          {/* Mini YIELD Triangle */}
+          <polygon
+            points="32,54 68,54 50,86"
+            fill="#ffffff"
+            stroke="#dc2626"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
+          <text
+            x="50"
+            y="67"
+            fill="#dc2626"
+            fontSize="8"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            YIELD
+          </text>
+        </svg>
+      );
+
+    case 'sign-merging-traffic':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Straight main arrow */}
+          <polygon points="46,24 38,34 43,34 43,76 49,76 49,34 54,34" fill="#000000" />
+          {/* Merging side arrow */}
+          <path
+            d="M 68,72 C 64,58 54,50 48,46"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+
+    case 'sign-added-lane':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Straight left arrow */}
+          <polygon points="36,24 28,34 33,34 33,76 39,76 39,34 44,34" fill="#000000" />
+          {/* Parallel added lane arrow (curves in then goes straight without touching) */}
+          <polygon points="64,24 56,34 61,34 61,54 C 61,66 69,72 73,76 L 68,76 C 63,71 56,64 56,54 L 56,34 61,34" fill="#000000" />
+        </svg>
+      );
+
+    case 'sign-roundabout':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* 3 circular curved arrows */}
+          <path
+            d="M 40,32 A 20 20 0 0 1 65,40"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <polygon points="65,34 72,42 61,45" fill="#000000" />
+          <path
+            d="M 68,54 A 20 20 0 0 1 45,68"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <polygon points="46,74 38,67 48,61" fill="#000000" />
+          <path
+            d="M 34,60 A 20 20 0 0 1 36,38"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <polygon points="32,38 39,30 43,40" fill="#000000" />
+        </svg>
+      );
+
+    case 'sign-deer-crossing':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Deer leaping silhouette */}
+          <path
+            d="M 30,55 C 32,50 38,48 48,46 C 54,45 60,40 64,36 C 65,34 68,34 68,36 C 67,40 64,44 60,47 L 62,56 C 66,54 72,50 74,48 L 74,52 C 70,56 64,61 60,61 L 54,58 C 50,62 44,65 38,65 L 30,69 L 28,66 L 34,60 C 31,59 30,57 30,55 Z"
+            fill="#000000"
+          />
+          {/* Antlers & Head */}
+          <path d="M 64,36 L 68,30 M 66,32 L 63,30 M 68,30 L 72,28" stroke="#000000" strokeWidth="2" strokeLinecap="round" />
+          {/* Front legs extended forward */}
+          <path d="M 58,54 L 68,64 L 66,66 L 56,58" fill="#000000" />
+        </svg>
+      );
+
+    case 'sign-low-clearance':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#facc15" stroke="#000000" strokeWidth="3" />
+          </g>
+          {/* Top arrow pointing down */}
+          <polygon points="50,38 42,27 58,27" fill="#000000" />
+          {/* Text 12'-6" */}
+          <text
+            x="50"
+            y="56"
+            fill="#000000"
+            fontSize="18"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            12'-6"
+          </text>
+          {/* Bottom arrow pointing up */}
+          <polygon points="50,64 42,75 58,75" fill="#000000" />
+        </svg>
+      );
+
+    case 'sign-one-lane-road':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <g transform="rotate(45 50 50)">
+            <rect x="15" y="15" width="70" height="70" rx="6" fill="#f97316" stroke="#000000" strokeWidth="3" />
+          </g>
+          <text
+            x="50"
+            y="42"
+            fill="#000000"
+            fontSize="9"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            ONE LANE
+          </text>
+          <text
+            x="50"
+            y="54"
+            fill="#000000"
+            fontSize="9"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            ROAD
+          </text>
+          <text
+            x="50"
+            y="66"
+            fill="#000000"
+            fontSize="9"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            AHEAD
+          </text>
+        </svg>
+      );
+
+    case 'sign-detour':
+      return (
+        <svg
+          width={size * 1.5}
+          height={size * 0.75}
+          viewBox="0 0 120 60"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="2" y="2" width="116" height="56" rx="4" fill="#f97316" stroke="#000000" strokeWidth="3" />
+          {/* Black arrow pointing right */}
+          <polygon points="12,18 78,18 78,8 108,30 78,52 78,42 12,42" fill="#000000" />
+          <text
+            x="50"
+            y="35"
+            fill="#f97316"
+            fontSize="13"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+            letterSpacing="1"
+          >
+            DETOUR
+          </text>
+        </svg>
+      );
+
+    case 'sign-end-road-work':
+      return (
+        <svg
+          width={size * 1.4}
+          height={size * 0.8}
+          viewBox="0 0 110 65"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="104" height="59" rx="4" fill="#ffffff" stroke="#000000" strokeWidth="3" />
+          <text
+            x="55"
+            y="26"
+            fill="#000000"
+            fontSize="12"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            END
+          </text>
+          <text
+            x="55"
+            y="42"
+            fill="#000000"
+            fontSize="11"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            ROAD WORK
+          </text>
+        </svg>
+      );
+
+    case 'sign-pa-keystone-shield':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="94" height="94" rx="8" fill="#ffffff" stroke="#000000" strokeWidth="3" />
+          {/* Keystone shape */}
+          <polygon
+            points="20,18 80,18 86,52 74,84 26,84 14,52"
+            fill="#0f172a"
+            stroke="#000000"
+            strokeWidth="2"
+          />
+          <text
+            x="50"
+            y="38"
+            fill="#ffffff"
+            fontSize="14"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+            letterSpacing="2"
+          >
+            PA
+          </text>
+          <text
+            x="50"
+            y="68"
+            fill="#ffffff"
+            fontSize="26"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            283
+          </text>
+        </svg>
+      );
+
+    case 'sign-us-route-shield':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="94" height="94" rx="8" fill="#000000" />
+          {/* White US Route Shield */}
+          <path
+            d="M 50,12 C 72,12 84,20 84,34 C 84,65 65,82 50,88 C 35,82 16,65 16,34 C 16,20 28,12 50,12 Z"
+            fill="#ffffff"
+            stroke="#000000"
+            strokeWidth="2"
+          />
+          <text
+            x="50"
+            y="35"
+            fill="#000000"
+            fontSize="12"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            US
+          </text>
+          <text
+            x="50"
+            y="68"
+            fill="#000000"
+            fontSize="30"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            30
+          </text>
+        </svg>
+      );
+
+    case 'sign-hospital':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="4" y="4" width="92" height="92" rx="8" fill="#2563eb" stroke="#ffffff" strokeWidth="3" />
+          <text
+            x="50"
+            y="72"
+            fill="#ffffff"
+            fontSize="64"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            H
+          </text>
+        </svg>
+      );
+
+    case 'sign-rest-area':
+      return (
+        <svg
+          width={size * 1.3}
+          height={size * 0.9}
+          viewBox="0 0 110 75"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="3" y="3" width="104" height="69" rx="6" fill="#1d4ed8" stroke="#ffffff" strokeWidth="2.5" />
+          <text
+            x="55"
+            y="30"
+            fill="#ffffff"
+            fontSize="13"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            REST AREA
+          </text>
+          <text
+            x="55"
+            y="48"
+            fill="#ffffff"
+            fontSize="10"
+            fontWeight="700"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            NEXT RIGHT
+          </text>
+          {/* Picnic table / bed / fuel mini symbols */}
+          <path d="M 35,60 L 75,60" stroke="#ffffff" strokeWidth="2" />
+        </svg>
+      );
+
+    case 'sign-ev-charging':
+      return (
+        <svg
+          width={size}
+          height={size}
+          viewBox="0 0 100 100"
+          className={`drop-shadow-md select-none ${className}`}
+        >
+          <rect x="4" y="4" width="92" height="92" rx="8" fill="#2563eb" stroke="#ffffff" strokeWidth="3" />
+          {/* EV Pump & Cable */}
+          <rect x="25" y="30" width="30" height="42" rx="4" fill="#ffffff" />
+          <rect x="30" y="36" width="20" height="15" rx="2" fill="#2563eb" />
+          {/* Electric bolt */}
+          <polygon points="40,38 34,44 39,44 38,49 45,43 40,43" fill="#ffffff" />
+          {/* Hose and plug */}
+          <path
+            d="M 55,42 C 65,42 68,52 68,60 C 68,68 62,70 62,65 L 62,55"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+          />
+          <text
+            x="50"
+            y="86"
+            fill="#ffffff"
+            fontSize="10"
+            fontWeight="900"
+            fontFamily="Arial, sans-serif"
+            textAnchor="middle"
+          >
+            EV CHARGE
+          </text>
+        </svg>
+      );
+
     default:
       return (
         <div
