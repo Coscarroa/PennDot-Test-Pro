@@ -259,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 onClick={onOpenDonations}
                 className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs transition-all shadow-sm hover:shadow-rose-500/20 cursor-pointer"
-                title={isEs ? 'Apoyar el proyecto con una donación (Zelle / Cripto)' : 'Support with a donation (Zelle / Crypto)'}
+                title={isEs ? 'Apoyar el proyecto con una donación (Zelle / Cash App / Cripto)' : 'Support with a donation (Zelle / Cash App / Crypto)'}
               >
                 <Heart className="w-3.5 h-3.5 fill-white" />
                 <span>{isEs ? 'Donar' : 'Donate'}</span>

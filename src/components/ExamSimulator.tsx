@@ -641,7 +641,7 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
                 className="px-5 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-md flex items-center gap-2 cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Heart className="w-4 h-4 fill-white text-white" />
-                <span>{isEs ? 'Donar (Zelle / Cripto)' : 'Donate (Zelle / Crypto)'}</span>
+                <span>{isEs ? 'Donar (Zelle / Cash App / Cripto)' : 'Donate (Zelle / Cash App / Crypto)'}</span>
               </button>
             )}
           </div>

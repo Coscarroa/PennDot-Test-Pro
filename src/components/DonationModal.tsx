@@ -29,11 +29,13 @@ export const DonationModal: React.FC<DonationModalProps> = ({
   if (!isOpen) return null;
 
   const isEs = language === 'es';
-  const [activeTab, setActiveTab] = useState<'zelle' | 'crypto'>('zelle');
+  const [activeTab, setActiveTab] = useState<'zelle' | 'cashapp' | 'crypto'>('zelle');
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
   const [selectedCrypto, setSelectedCrypto] = useState<'btc' | 'eth' | 'ada' | 'sol'>('btc');
 
   const zelleEmail = 'Cesil.Roa@gmail.com';
+  const cashAppTag = '$CesilRoa';
+  const cashAppLink = 'https://cash.app/$CesilRoa';
 
   const cryptoWallets = {
     btc: {
@@ -103,34 +105,46 @@ export const DonationModal: React.FC<DonationModalProps> = ({
 
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
           {isEs
-            ? 'Esta plataforma es 100% gratuita y sin anuncios molestos para ayudar a toda la comunidad hispana y angloparlante a prepararse y aprobar su examen de conducir en Pensilvania. Si te ha sido útil, puedes apoyar el desarrollo y mantenimiento del servidor mediante Zelle o Criptomonedas.'
-            : 'This platform is 100% free and ad-free to help all learners prepare and pass their PA PennDOT driving test. If this tool helped you, consider supporting server and development costs via Zelle or Cryptocurrency.'}
+            ? 'Esta plataforma es 100% gratuita y sin anuncios molestos para ayudar a toda la comunidad hispana y angloparlante a prepararse y aprobar su examen de conducir en Pensilvania. Si te ha sido útil, puedes apoyar el desarrollo y mantenimiento del servidor mediante Zelle, Cash App o Criptomonedas.'
+            : 'This platform is 100% free and ad-free to help all learners prepare and pass their PA PennDOT driving test. If this tool helped you, consider supporting server and development costs via Zelle, Cash App, or Cryptocurrency.'}
         </p>
 
-        {/* Method Switch Tabs: Zelle vs Crypto */}
-        <div className="grid grid-cols-2 p-1.5 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 mb-6">
+        {/* Method Switch Tabs: Zelle vs Cash App vs Crypto */}
+        <div className="grid grid-cols-3 p-1.5 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 mb-6 gap-1">
           <button
             onClick={() => setActiveTab('zelle')}
-            className={`py-2.5 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            className={`py-2 px-1.5 sm:px-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer ${
               activeTab === 'zelle'
                 ? 'bg-purple-600 text-white shadow-md'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            <span className="text-base font-black">Z</span>
+            <span className="text-sm sm:text-base font-black">Z</span>
             <span>Zelle®</span>
           </button>
 
           <button
+            onClick={() => setActiveTab('cashapp')}
+            className={`py-2 px-1.5 sm:px-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer ${
+              activeTab === 'cashapp'
+                ? 'bg-emerald-600 text-white shadow-md'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            <span className="text-sm sm:text-base font-black">$</span>
+            <span>Cash App</span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('crypto')}
-            className={`py-2.5 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            className={`py-2 px-1.5 sm:px-3 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer ${
               activeTab === 'crypto'
                 ? 'bg-amber-600 text-white shadow-md'
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            <span className="text-base">₿</span>
-            <span>{isEs ? 'Criptomoneda' : 'Crypto'}</span>
+            <span className="text-sm sm:text-base font-bold">₿</span>
+            <span>{isEs ? 'Cripto' : 'Crypto'}</span>
           </button>
         </div>
 
@@ -197,7 +211,81 @@ export const DonationModal: React.FC<DonationModalProps> = ({
           </div>
         )}
 
-        {/* Tab 2: Crypto */}
+        {/* Tab 2: Cash App */}
+        {activeTab === 'cashapp' && (
+          <div className="space-y-4 animate-fadeIn">
+            <div className="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border-2 border-emerald-300 dark:border-emerald-800">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-black uppercase text-emerald-800 dark:text-emerald-300 tracking-wider">
+                  {isEs ? 'Pago con Cash App ($Cashtag)' : 'Instant Transfer with Cash App'}
+                </span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-200 text-emerald-900 dark:bg-emerald-900 dark:text-emerald-200">
+                  {isEs ? 'Rápido & Seguro' : 'Fast & Secure'}
+                </span>
+              </div>
+
+              <div className="mb-3">
+                <label className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block mb-1">
+                  {isEs ? 'Cashtag / Nombre de Usuario:' : 'Cash App $Cashtag:'}
+                </label>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-white dark:bg-slate-900 rounded-xl border border-emerald-300 dark:border-emerald-700">
+                  <span className="font-mono font-black text-lg sm:text-xl text-emerald-700 dark:text-emerald-400 select-all tracking-tight">
+                    {cashAppTag}
+                  </span>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      onClick={() => handleCopy(cashAppTag, 'cashapp', 'Cash App Tag')}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-lg shadow-sm transition-colors cursor-pointer"
+                    >
+                      {copiedKey === 'cashapp' ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copiedKey === 'cashapp' ? (isEs ? '¡Copiado!' : 'Copied!') : (isEs ? 'Copiar $Tag' : 'Copy $Tag')}</span>
+                    </button>
+                    <a
+                      href={cashAppLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold text-xs rounded-lg shadow-sm transition-colors cursor-pointer"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>{isEs ? 'Abrir App' : 'Open App'}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Instructions list */}
+              <div className="mt-4 pt-3 border-t border-emerald-200 dark:border-emerald-800/60 text-xs text-slate-700 dark:text-slate-300 space-y-1.5">
+                <p className="font-bold text-emerald-900 dark:text-emerald-300">
+                  {isEs ? 'Instrucciones para donar con Cash App:' : 'How to send with Cash App:'}
+                </p>
+                <ol className="list-decimal list-inside space-y-1 text-[11px] text-slate-600 dark:text-slate-400">
+                  <li>
+                    {isEs
+                      ? 'Abre la app de Cash App en tu teléfono móvil o haz clic en "Abrir App".'
+                      : 'Open the Cash App on your mobile device or tap "Open App".'}
+                  </li>
+                  <li>
+                    {isEs
+                      ? 'Digita la cantidad deseada y presiona el botón "Pay".'
+                      : 'Type the donation amount and tap "Pay".'}
+                  </li>
+                  <li>
+                    {isEs
+                      ? `En el campo "To" ingresa el usuario: ${cashAppTag}.`
+                      : `In the "To" field enter: ${cashAppTag}.`}
+                  </li>
+                  <li>
+                    {isEs
+                      ? 'En la nota ("For") escribe: "PennDOT Exam Pro". ¡Muchísimas gracias por tu apoyo!'
+                      : 'In the note ("For") write: "PennDOT Exam Pro". Thank you so much for your support!'}
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tab 3: Crypto */}
         {activeTab === 'crypto' && (
           <div className="space-y-4 animate-fadeIn">
             {/* Crypto selector pills */}
