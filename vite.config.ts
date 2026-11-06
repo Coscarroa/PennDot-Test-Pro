@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: 'PennDot-Test-Pro', // Reemplaza esto con el nombre exacto de tu repo en GitHub (ej: /mi-proyecto/)
+  base: '/PennDot-Test-Pro/', // Reemplaza esto con el nombre exacto de tu repo en GitHub (ej: /mi-proyecto/)
 })
 export default defineConfig(() => {
   return {
