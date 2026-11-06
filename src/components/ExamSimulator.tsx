@@ -1173,39 +1173,39 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
               <button
                 key={optIdx}
                 onClick={() => handleSelectOption(optIdx)}
-                className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center justify-between cursor-pointer group ${
+                className={`w-full text-left p-3.5 sm:p-4 rounded-2xl border-2 transition-all flex items-center justify-between cursor-pointer group min-h-[52px] active:scale-[0.99] ${
                   isSelected
-                    ? 'border-blue-600 bg-blue-50/80 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-md'
+                    ? 'border-blue-600 bg-blue-50/80 dark:bg-blue-950/40 text-blue-950 dark:text-blue-100 shadow-md ring-2 ring-blue-400/30'
                     : 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 hover:border-blue-300 dark:hover:border-blue-700 text-slate-800 dark:text-slate-200'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs sm:text-sm shrink-0 transition-colors ${
+                    className={`w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-xs sm:text-sm shrink-0 transition-colors ${
                       isSelected
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-blue-600 text-white shadow-sm'
                         : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 group-hover:border-blue-400'
                     }`}
                   >
                     {String.fromCharCode(65 + optIdx)}
                   </div>
-                  <span className="text-sm sm:text-base font-semibold">{opt}</span>
+                  <span className="text-xs sm:text-base font-semibold leading-relaxed">{opt}</span>
                 </div>
-                {isSelected && <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />}
+                {isSelected && <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 ml-2" />}
               </button>
             );
           })}
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex items-center justify-between gap-4 border-t border-slate-100 dark:border-slate-800 pt-6">
+        {/* Navigation Buttons (Touch-friendly 44px+ height on mobile) */}
+        <div className="flex items-center justify-between gap-3 border-t border-slate-100 dark:border-slate-800 pt-6">
           <button
             onClick={() => {
               tts.stop();
               if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
             }}
             disabled={currentIndex === 0}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-3 sm:py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs sm:text-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer min-h-[44px]"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>{isEs ? 'Anterior' : 'Previous'}</span>
@@ -1217,7 +1217,7 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
                 tts.stop();
                 setCurrentIndex(currentIndex + 1);
               }}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-5 sm:px-6 py-3 sm:py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md transition-colors cursor-pointer min-h-[44px]"
             >
               <span>{isEs ? 'Siguiente' : 'Next'}</span>
               <ChevronRight className="w-4 h-4" />
@@ -1225,10 +1225,10 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
           ) : (
             <button
               onClick={() => finishExam()}
-              className="flex items-center gap-2 px-8 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-500/20 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2 px-5 sm:px-8 py-3 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-500/20 transition-colors cursor-pointer min-h-[44px]"
             >
               <Award className="w-4 h-4" />
-              <span>{isEs ? 'CALIFICAR EXAMEN' : 'GRADE EXAM'}</span>
+              <span>{isEs ? 'CALIFICAR' : 'GRADE EXAM'}</span>
             </button>
           )}
         </div>

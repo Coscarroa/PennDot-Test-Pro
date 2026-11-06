@@ -350,7 +350,21 @@ export const PassingBadgeCertificate: React.FC<PassingBadgeCertificateProps> = (
         `🆔 Credential ID: ${verificationId}\n\n` +
         `Study with PennDOT PA Driver Exam Pro!`;
 
-    if (navigator.clipboard) {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: 'PennDOT PA Driver Exam Pro',
+          text: shareText
+        })
+        .catch(() => {
+          // If user cancelled or failed, fallback to clipboard
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareText);
+            setIsCopied(true);
+            setTimeout(() => setIsCopied(false), 3000);
+          }
+        });
+    } else if (navigator.clipboard) {
       navigator.clipboard.writeText(shareText);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 3000);

@@ -15,7 +15,8 @@ import {
   VolumeX,
   Wifi,
   WifiOff,
-  Heart
+  Heart,
+  Smartphone
 } from 'lucide-react';
 import { Language, ThemeMode } from '../types';
 import { sound } from '../utils/sound';
@@ -33,6 +34,7 @@ interface NavbarProps {
   onOpenNotifications: () => void;
   onOpenManual: () => void;
   onOpenDonations: () => void;
+  onOpenInstallApp?: () => void;
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
 }
@@ -50,6 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenNotifications,
   onOpenManual,
   onOpenDonations,
+  onOpenInstallApp,
   soundEnabled,
   setSoundEnabled
 }) => {
@@ -255,18 +258,30 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* 9. Donations Button */}
               <button
                 onClick={onOpenDonations}
-                className="flex items-center gap-1.5 px-3.5 py-1 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs transition-all shadow-sm hover:shadow-rose-500/20 cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold text-xs transition-all shadow-sm hover:shadow-rose-500/20 cursor-pointer"
                 title={isEs ? 'Apoyar el proyecto con una donación (Zelle / Cripto)' : 'Support with a donation (Zelle / Crypto)'}
               >
                 <Heart className="w-3.5 h-3.5 fill-white" />
                 <span>{isEs ? 'Donar' : 'Donate'}</span>
               </button>
+
+              {/* 10. Install PWA App Button */}
+              {onOpenInstallApp && (
+                <button
+                  onClick={onOpenInstallApp}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900 font-bold text-xs transition-all shadow-sm cursor-pointer"
+                  title={isEs ? 'Instalar aplicación en móvil o escritorio' : 'Install web app on mobile or desktop'}
+                >
+                  <Smartphone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                  <span>{isEs ? 'Instalar App' : 'Install App'}</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Tab Navigation Menu */}
-        <nav className="flex space-x-1 sm:space-x-3 overflow-x-auto py-2 no-scrollbar border-t border-slate-100 dark:border-slate-800/60">
+        {/* Tab Navigation Menu (Visible on Desktop / Tablet, on Mobile handled by ergonomic bottom navigation) */}
+        <nav className="hidden sm:flex justify-center flex-wrap gap-2 py-2.5 border-t border-slate-100 dark:border-slate-800/60">
           {navItems.map(item => {
             const Icon = item.icon;
             const active = currentTab === item.id;

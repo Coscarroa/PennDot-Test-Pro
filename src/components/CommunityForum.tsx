@@ -362,8 +362,14 @@ export const CommunityForum: React.FC<CommunityForumProps> = ({ language }) => {
 
       {/* New Post Modal */}
       {showNewPostModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative">
+        <div
+          onClick={() => setShowNewPostModal(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn"
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+          >
             <button
               onClick={() => setShowNewPostModal(false)}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 dark:hover:text-white font-bold"
