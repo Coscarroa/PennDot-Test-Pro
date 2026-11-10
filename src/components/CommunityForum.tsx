@@ -203,10 +203,10 @@ export const CommunityForum: React.FC<CommunityForumProps> = ({ language }) => {
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
             <MessageSquare className="w-4 h-4" />
-            <span>{isEs ? 'Comunidad de Conductores de Pensilvania' : 'Pennsylvania Driver Community'}</span>
+            <span>{isEs ? 'Foro Driver • Pensilvania' : 'Driver Forum • Pennsylvania'}</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
-            {isEs ? 'Foro de Discusión y Consejos PennDOT' : 'PennDOT Community & Discussion Board'}
+            {isEs ? 'Foro Driver: Consejos y Comunidad PennDOT' : 'Driver Forum: PennDOT Tips & Discussion'}
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             {isEs

@@ -16,7 +16,8 @@ import {
   Wifi,
   WifiOff,
   Heart,
-  Smartphone
+  Smartphone,
+  HelpCircle
 } from 'lucide-react';
 import { Language, ThemeMode } from '../types';
 import { sound } from '../utils/sound';
@@ -78,6 +79,12 @@ export const Navbar: React.FC<NavbarProps> = ({
       icon: BookOpen
     },
     {
+      id: 'bank',
+      label: isEs ? 'Banco de Preguntas' : 'Question Bank',
+      sublabel: isEs ? 'Módulo de Consulta' : 'Study Bank & Search',
+      icon: HelpCircle
+    },
+    {
       id: 'signs',
       label: isEs ? 'Señales Viales' : 'Road Signs',
       sublabel: isEs ? 'Catálogo & Quiz' : 'Catalog & Quiz',
@@ -91,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     {
       id: 'forum',
-      label: isEs ? 'Foro Comunitario' : 'Community Forum',
+      label: isEs ? 'Foro Driver' : 'Driver Forum',
       sublabel: isEs ? 'Centros & Tips' : 'PA Centers & Tips',
       icon: MessageSquare
     }

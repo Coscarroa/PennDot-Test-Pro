@@ -1,0 +1,600 @@
+[
+  {
+    "id": 1,
+    "categoria": "grupo1",
+    "pregunta": "¿Cuál es la forma y el color reglamentario de una señal de ALTO (STOP)?",
+    "opciones": [
+      "Octagonal, roja con letras y borde blancos",
+      "Triangular, amarilla con borde negro",
+      "Redonda, blanca con letras rojas",
+      "Diamante, anaranjada con borde negro"
+    ],
+    "correcta": "Octagonal, roja con letras y borde blancos",
+    "explicacion": "El Manual del Conductor de Pensilvania (Capítulo 2) establece que la señal de STOP es la única señal de tránsito con forma octagonal (8 lados), de color rojo con letras blancas. Obliga a una detención completa antes de la línea de pare o del paso peatonal."
+  },
+  {
+    "id": 2,
+    "categoria": "grupo1",
+    "pregunta": "¿Qué significado tiene una señal triangular que apunta hacia abajo con fondo blanco y borde rojo?",
+    "opciones": [
+      "Ceda el Paso (YIELD)",
+      "Zona de No Rebasar",
+      "Fin de Autopista",
+      "Cruce de Ferrocarril"
+    ],
+    "correcta": "Ceda el Paso (YIELD)",
+    "explicacion": "La señal triangular de tres lados apuntando hacia abajo es exclusivamente para CEDER EL PASO (YIELD). Debe reducir la velocidad y detenerse si es necesario para ceder el derecho de paso a cualquier vehículo o peatón en la vía a la que ingresa."
+  },
+  {
+    "id": 3,
+    "categoria": "grupo1",
+    "pregunta": "¿Qué indica una señal en forma de diamante (rombo) de color amarillo con símbolos negros?",
+    "opciones": [
+      "Advertencia de peligro o condición especial en el camino",
+      "Regulación obligatoria de velocidad",
+      "Zona de estacionamiento reservado",
+      "Guía turística de servicios viales"
+    ],
+    "correcta": "Advertencia de peligro o condición especial en el camino",
+    "explicacion": "Las señales con forma de diamante amarillo son señales de advertencia (Warning Signs). Alertan a los conductores sobre curvas pronunciadas, intersecciones ocultas, cruces de fauna o cambios en las condiciones físicas de la carretera."
+  },
+  {
+    "id": 4,
+    "categoria": "grupo1",
+    "pregunta": "¿Dónde se ubica y qué indica una señal en forma de banderín horizontal (Pennant) de color amarillo?",
+    "opciones": [
+      "En el lado izquierdo de la carretera e indica el inicio de una Zona de No Rebasar (NO PASSING ZONE)",
+      "En el lado derecho e indica una zona escolar",
+      "En el centro del carril e indica desvío de emergencia",
+      "En postes elevados e indica peaje obligatorio"
+    ],
+    "correcta": "En el lado izquierdo de la carretera e indica el inicio de una Zona de No Rebasar (NO PASSING ZONE)",
+    "explicacion": "La señal en forma de banderín de tres lados se coloca exclusivamente al costado izquierdo de la calzada para advertir a los conductores que entran en una zona donde es ilegal adelantar a otros vehículos debido a visibilidad limitada."
+  },
+  {
+    "id": 5,
+    "categoria": "grupo1",
+    "pregunta": "¿Cuál es la forma y color de la señal avanzada de advertencia de cruce de ferrocarril?",
+    "opciones": [
+      "Circular y amarilla con una 'X' y las letras 'RR'",
+      "Cuadrada blanca con letras negras",
+      "Octagonal roja",
+      "Triangular anaranjada"
+    ],
+    "correcta": "Circular y amarilla con una 'X' y las letras 'RR'",
+    "explicacion": "Una señal circular amarilla de 36 pulgadas con una gran 'X' y las letras 'RR' advierte con anticipación que se aproxima a un cruce ferroviario a nivel de la vía."
+  },
+  {
+    "id": 6,
+    "categoria": "grupo1",
+    "pregunta": "¿Qué forma y color identifica a las señales de zona escolar y cruce escolar en Pensilvania?",
+    "opciones": [
+      "Pentágono (5 lados) de color amarillo o verde fluorescente",
+      "Rectángulo azul",
+      "Círculo rojo",
+      "Rombo anaranjado"
+    ],
+    "correcta": "Pentágono (5 lados) de color amarillo o verde fluorescente",
+    "explicacion": "Las señales pentagonales con forma de casa vieja (5 lados) de color amarillo o verde-amarillo fluorescente advierten sobre la proximidad de una escuela o cruce escolar de niños."
+  },
+  {
+    "id": 7,
+    "categoria": "grupo1",
+    "pregunta": "¿Qué tipo de información comunican las señales con fondo anaranjado y letras o símbolos negros?",
+    "opciones": [
+      "Zonas de obras, mantenimiento vial y construcción temporal",
+      "Leyes de tránsito permanentes",
+      "Rutas de hospitales y primeros auxilios",
+      "Puntos de interés histórico estatal"
+    ],
+    "correcta": "Zonas de obras, mantenimiento vial y construcción temporal",
+    "explicacion": "El color anaranjado se reserva exclusivamente para zonas de control temporal de tráfico, obras viales y cuadrillas de trabajadores en la carretera. Las multas por exceso de velocidad se duplican en estas zonas cuando hay trabajadores presentes."
+  },
+  {
+    "id": 8,
+    "categoria": "grupo1",
+    "pregunta": "¿Qué significado tienen las líneas continuas blancas en el pavimento?",
+    "opciones": [
+      "Separan carriles que van en el mismo sentido e indican que cambiar de carril es peligroso o desaconsejado",
+      "Separan el tráfico que viaja en sentidos opuestos",
+      "Indican que está permitido adelantar a ciclistas por la banquina",
+      "Marcan zonas donde el límite de velocidad es superior a 65 mph"
+    ],
+    "correcta": "Separan carriles que van en el mismo sentido e indican que cambiar de carril es peligroso o desaconsejado",
+    "explicacion": "Las líneas blancas separan carriles de circulación en el mismo sentido vial. Una línea blanca continua indica que se debe permanecer en el carril y desaconseja cruzarla a menos que sea estrictamente necesario para evitar un choque."
+  },
+  {
+    "id": 9,
+    "categoria": "grupo2",
+    "pregunta": "Si dos vehículos llegan al mismo tiempo a una intersección de 4 vías con señales de ALTO (4-way stop), ¿quién tiene el derecho de paso?",
+    "opciones": [
+      "El conductor del vehículo que está a la derecha",
+      "El conductor del vehículo más grande o pesado",
+      "El conductor que planea continuar en línea recta sobre el que gira a la derecha",
+      "El vehículo que toque la bocina primero"
+    ],
+    "correcta": "El conductor del vehículo que está a la derecha",
+    "explicacion": "Según la regla de derecho de paso en Pensilvania, si dos vehículos llegan exactamente al mismo tiempo a una parada de 4 vías, el conductor situado a la izquierda debe ceder el paso al conductor situado a su derecha."
+  },
+  {
+    "id": 10,
+    "categoria": "grupo2",
+    "pregunta": "¿Es legal en Pensilvania girar a la derecha frente a una luz roja continua del semáforo?",
+    "opciones": [
+      "Sí, tras hacer un alto completo y ceder el paso a peatones y tráfico en sentido contrario, salvo que un letrero diga 'NO TURN ON RED'",
+      "No, girar en luz roja está prohibido en todo el estado de Pensilvania",
+      "Sí, únicamente si viaja con un acompañante de más de 21 años",
+      "Sí, pero solo entre las 9:00 p.m. y las 5:00 a.m."
+    ],
+    "correcta": "Sí, tras hacer un alto completo y ceder el paso a peatones y tráfico en sentido contrario, salvo que un letrero diga 'NO TURN ON RED'",
+    "explicacion": "A menos que haya un letrero que prohíba el giro ('NO TURN ON RED'), la ley de Pensilvania permite girar a la derecha con semáforo en rojo después de realizar un alto total reglamentario y comprobar que la vía y el cruce peatonal estén libres."
+  },
+  {
+    "id": 11,
+    "categoria": "grupo2",
+    "pregunta": "¿Quién tiene el derecho de paso al circular en una glorieta o rotonda de tráfico (Traffic Circle / Roundabout)?",
+    "opciones": [
+      "Los vehículos que ya están circulando dentro de la rotonda",
+      "Los vehículos que están entrando a la rotonda desde la derecha",
+      "El vehículo que viaje a mayor velocidad",
+      "Los camiones de carga independientemente de su posición"
+    ],
+    "correcta": "Los vehículos que ya están circulando dentro de la rotonda",
+    "explicacion": "Al entrar a una rotonda moderna, usted debe ceder el derecho de paso a todos los vehículos y ciclistas que ya están en el círculo de circulación, así como a los peatones en los cruces señalizados."
+  },
+  {
+    "id": 12,
+    "categoria": "grupo2",
+    "pregunta": "Cuando usted se prepara para girar a la izquierda en una intersección con luz verde circular fija, ¿qué debe hacer?",
+    "opciones": [
+      "Ceder el paso al tráfico que viene de frente en sentido opuesto y a los peatones antes de completar el giro",
+      "Girar de inmediato porque tiene derecho de paso sobre todos los vehículos",
+      "Esperar a que el semáforo cambie a amarillo para avanzar apresuradamente",
+      "Detenerse detrás del cruce peatonal y no ingresar a la intersección"
+    ],
+    "correcta": "Ceder el paso al tráfico que viene de frente en sentido opuesto y a los peatones antes de completar el giro",
+    "explicacion": "Una luz verde circular fija permite girar a la izquierda únicamente cuando sea seguro; no otorga prioridad sobre los vehículos que se aproximan en sentido opuesto en línea recta ni sobre los peatones que cruzan."
+  },
+  {
+    "id": 13,
+    "categoria": "grupo2",
+    "pregunta": "¿Qué acción debe tomar cuando escucha la sirena o ve las luces intermitentes de un vehículo de emergencia que se aproxima?",
+    "opciones": [
+      "Moverse de inmediato al borde derecho de la calzada, detenerse por completo y permanecer inmóvil hasta que pase",
+      "Acelerar para despejar la intersección lo más rápido posible",
+      "Detenerse inmediatamente en el carril exacto donde se encuentra",
+      "Pasarse al carril izquierdo y continuar a velocidad constante"
+    ],
+    "correcta": "Moverse de inmediato al borde derecho de la calzada, detenerse por completo y permanecer inmóvil hasta que pase",
+    "explicacion": "El manual de PennDOT indica que ante vehículos de emergencia (policía, bomberos, ambulancias), todos los conductores deben orillarse con calma hacia el extremo derecho del camino, detenerse y esperar a que el vehículo pase de largo."
+  },
+  {
+    "id": 14,
+    "categoria": "grupo2",
+    "pregunta": "¿Qué exige la ley 'Move Over Law' de Pensilvania al acercarse a un vehículo de emergencia o grúa detenido a un lado de la vía con luces activadas?",
+    "opciones": [
+      "Cambiar de carril alejándose del vehículo detenido si es seguro, o reducir la velocidad al menos a 20 mph por debajo del límite publicado",
+      "Tocar la bocina dos veces y mantener la velocidad máxima permitida",
+      "Detenerse completamente detrás del vehículo de rescate en la banquina",
+      "Encender las luces de emergencia y seguir a la misma velocidad"
+    ],
+    "correcta": "Cambiar de carril alejándose del vehículo detenido si es seguro, o reducir la velocidad al menos a 20 mph por debajo del límite publicado",
+    "explicacion": "La Ley Move Over de Pensilvania exige despejar el carril adyacente al vehículo de emergencia o de asistencia vial detenido. Si no es posible cambiarse de carril de forma segura, debe reducir la velocidad a 20 mph por debajo del límite de velocidad publicado."
+  },
+  {
+    "id": 15,
+    "categoria": "grupo2",
+    "pregunta": "¿Quién tiene prioridad cuando un vehículo se incorpora (merge) desde una rampa de aceleración a una autopista?",
+    "opciones": [
+      "El tráfico que ya está transitando en los carriles principales de la autopista",
+      "El vehículo que entra desde la rampa porque viene acelerando",
+      "El vehículo que alcance primero el punto de confluencia",
+      "Los vehículos de transporte de pasajeros exclusivamente"
+    ],
+    "correcta": "El tráfico que ya está transitando en los carriles principales de la autopista",
+    "explicacion": "Los conductores que ingresan a una autopista desde un carril de incorporación deben ajustar su velocidad para encajar en el flujo de tráfico de forma segura y deben ceder el paso a los vehículos que ya viajan por la autopista."
+  },
+  {
+    "id": 16,
+    "categoria": "grupo2",
+    "pregunta": "¿Cuál es la norma de prioridad en un cruce peatonal no regulado por semáforos ni agentes de tránsito?",
+    "opciones": [
+      "El conductor siempre debe ceder el paso a cualquier peatón que esté cruzando",
+      "El peatón debe esperar a que no haya ningún vehículo a 500 pies a la redonda",
+      "El conductor tiene derecho de paso durante las horas diurnas",
+      "Solo se cede el paso si el peatón lleva un bastón blanco o perro guía"
+    ],
+    "correcta": "El conductor siempre debe ceder el paso a cualquier peatón que esté cruzando",
+    "explicacion": "La ley de Pensilvania protege a los peatones: en cualquier cruce peatonal marcado o no marcado en una intersección, los conductores deben detenerse y ceder el derecho de paso al peatón que cruza la vía."
+  },
+  {
+    "id": 17,
+    "categoria": "grupo3",
+    "pregunta": "¿Cuál es el límite máximo de velocidad en una zona escolar de Pensilvania cuando las luces ámbar están parpadeando?",
+    "opciones": [
+      "15 millas por hora (mph)",
+      "20 millas por hora (mph)",
+      "25 millas por hora (mph)",
+      "10 millas por hora (mph)"
+    ],
+    "correcta": "15 millas por hora (mph)",
+    "explicacion": "En todas las zonas escolares de Pensilvania, el límite de velocidad es estrictamente de 15 mph cuando las luces intermitentes están encendidas o durante los horarios escolares reglamentarios publicados. Violarlo conlleva 3 puntos y severas multas."
+  },
+  {
+    "id": 18,
+    "categoria": "grupo3",
+    "pregunta": "¿A qué distancia mínima debe detener su vehículo ante un autobús escolar que tiene las luces rojas intermitentes y el brazo de ALTO desplegado?",
+    "opciones": [
+      "Por lo menos a 10 pies de distancia",
+      "Por lo menos a 5 pies de distancia",
+      "Por lo menos a 25 pies de distancia",
+      "Por lo menos a 50 pies de distancia"
+    ],
+    "correcta": "Por lo menos a 10 pies de distancia",
+    "explicacion": "La ley de Pensilvania exige que los conductores que circulan en cualquier dirección se detengan a un mínimo de 10 pies de distancia de un autobús escolar detenido con luces rojas y señal de pare activadas."
+  },
+  {
+    "id": 19,
+    "categoria": "grupo3",
+    "pregunta": "¿Cuáles son las sanciones por no detenerse ante un autobús escolar con luces rojas en Pensilvania?",
+    "opciones": [
+      "Suspensión de licencia de conducir por 60 días, 5 puntos en el récord y multa monetaria",
+      "1 punto en el récord y una advertencia escrita",
+      "Suspensión de licencia por 1 año y arresto obligatorio",
+      "Multa de estacionamiento sin puntos en la licencia"
+    ],
+    "correcta": "Suspensión de licencia de conducir por 60 días, 5 puntos en el récord y multa monetaria",
+    "explicacion": "Adelantar o no detenerse ante un autobús escolar con luces rojas es una infracción gravísima en Pensilvania: se sanciona con una suspensión obligatoria de la licencia de 60 días, la adición de 5 puntos en su registro de manejo y una multa económica sustancial."
+  },
+  {
+    "id": 20,
+    "categoria": "grupo3",
+    "pregunta": "¿En qué única situación NO está obligado a detenerse ante un autobús escolar con luces rojas que viaja en sentido contrario?",
+    "opciones": [
+      "Cuando la carretera está separada por una barrera física, como una mediana de concreto o división de tierra",
+      "Cuando conduce por una calle de cuatro carriles pintados con doble línea amarilla",
+      "Cuando viaja después del horario escolar oficial (después de las 4:00 p.m.)",
+      "Cuando el conductor del autobús le hace una señal con la mano para continuar"
+    ],
+    "correcta": "Cuando la carretera está separada por una barrera física, como una mediana de concreto o división de tierra",
+    "explicacion": "Solo está exento de detenerse si viaja en el sentido opuesto en una carretera dividida físicamente (con barandilla de concreto o franja central de tierra/pasto). Si la división es solo pintura en el asfalto, debe detenerse obligatoriamente."
+  },
+  {
+    "id": 21,
+    "categoria": "grupo3",
+    "pregunta": "¿Cuál es el límite de velocidad legal predeterminado en Pensilvania para distritos comerciales o áreas no residenciales cuando no hay señales publicadas?",
+    "opciones": [
+      "35 millas por hora (mph)",
+      "25 millas por hora (mph)",
+      "45 millas por hora (mph)",
+      "55 millas por hora (mph)"
+    ],
+    "correcta": "35 millas por hora (mph)",
+    "explicacion": "Por estatuto de Pensilvania, si no hay carteles de velocidad publicados, el límite legal es de 35 mph en distritos comerciales y urbanos no residenciales, 25 mph en vecindarios residenciales, y 55 mph en carreteras secundarias abiertas."
+  },
+  {
+    "id": 22,
+    "categoria": "grupo3",
+    "pregunta": "¿A qué distancia mínima se prohíbe estacionar un vehículo cerca de un hidrante de incendios (boca de agua)?",
+    "opciones": [
+      "A menos de 15 pies",
+      "A menos de 10 pies",
+      "A menos de 25 pies",
+      "A menos de 30 pies"
+    ],
+    "correcta": "A menos de 15 pies",
+    "explicacion": "El Código de Vehículos de Pensilvania prohíbe terminantemente estacionar o detenerse a menos de 15 pies de cualquier hidrante o toma de agua contra incendios para garantizar el acceso inmediato a los bomberos."
+  },
+  {
+    "id": 23,
+    "categoria": "grupo3",
+    "pregunta": "¿A qué distancia mínima debe estacionar su vehículo de una señal de ALTO (STOP) o de un semáforo de intersección?",
+    "opciones": [
+      "A por lo menos 30 pies de distancia",
+      "A por lo menos 15 pies de distancia",
+      "A por lo menos 20 pies de distancia",
+      "A por lo menos 50 pies de distancia"
+    ],
+    "correcta": "A por lo menos 30 pies de distancia",
+    "explicacion": "Está prohibido estacionar a menos de 30 pies de distancia del frente de cualquier señal de STOP, señal de YIELD o semáforo de intersección, para no bloquear la visual de los demás conductores."
+  },
+  {
+    "id": 24,
+    "categoria": "grupo3",
+    "pregunta": "¿Cuál es el límite de velocidad típico en las autopistas interestatales rurales de Pensilvania si no se indica lo contrario?",
+    "opciones": [
+      "65 o 70 millas por hora (mph) según esté señalizado",
+      "50 millas por hora (mph)",
+      "80 millas por hora (mph)",
+      "55 millas por hora (mph)"
+    ],
+    "correcta": "65 o 70 millas por hora (mph) según esté señalizado",
+    "explicacion": "En las autopistas interestatales rurales de Pensilvania, el límite de velocidad máxima establecido es de 65 o 70 mph en los tramos donde esté debidamente publicado."
+  },
+  {
+    "id": 25,
+    "categoria": "grupo4",
+    "pregunta": "¿Cuál es el límite legal de concentración de alcohol en la sangre (BAC) para conductores de 21 años o más en Pensilvania?",
+    "opciones": [
+      "0.08%",
+      "0.05%",
+      "0.10%",
+      "0.02%"
+    ],
+    "correcta": "0.08%",
+    "explicacion": "En Pensilvania, un conductor de 21 años o más se considera legalmente intoxicado si su Concentración de Alcohol en la Sangre (BAC) es de 0.08% o superior. A este nivel, el conductor enfrentará cargos criminales por DUI."
+  },
+  {
+    "id": 26,
+    "categoria": "grupo4",
+    "pregunta": "¿Bajo la Ley de Tolerancia Cero de Pensilvania, con qué nivel de BAC puede ser arrestado y condenado por DUI un conductor menor de 21 años?",
+    "opciones": [
+      "0.02% o más",
+      "0.08% o más",
+      "0.05% o más",
+      "0.00% exclusivamente"
+    ],
+    "correcta": "0.02% o más",
+    "explicacion": "La Ley de Tolerancia Cero (Zero Tolerance Law) de Pensilvania penaliza severamente a conductores menores de 21 años con un BAC de 0.02% o superior. Conlleva arresto por DUI, suspensión de la licencia por un mínimo de 12 meses y multas elevadas."
+  },
+  {
+    "id": 27,
+    "categoria": "grupo4",
+    "pregunta": "¿Cuál es el límite legal de alcohol en la sangre (BAC) para conductores que operan vehículos comerciales (CDL)?",
+    "opciones": [
+      "0.04%",
+      "0.08%",
+      "0.02%",
+      "0.06%"
+    ],
+    "correcta": "0.04%",
+    "explicacion": "Para operadores de vehículos comerciales y camiones regulados por licencias CDL, el límite legal de BAC es de 0.04%. Superar este umbral resulta en la revocación de la credencial comercial y sanciones federales."
+  },
+  {
+    "id": 28,
+    "categoria": "grupo4",
+    "pregunta": "¿Qué establece la Ley de Consentimiento Implícito (Implied Consent Law) de Pensilvania?",
+    "opciones": [
+      "Al conducir en Pensilvania, usted acepta someterse a pruebas químicas de aliento, sangre u orina si es arrestado por sospecha de DUI; negarse suspende automáticamente la licencia por 12 meses",
+      "Usted acepta pagar peajes de forma automática en todas las autopistas del estado",
+      "Usted consiente que cualquier pasajero mayor de 18 años tome el volante si usted se cansa",
+      "Usted permite que la policía registre su vivienda si sospechan de una infracción"
+    ],
+    "correcta": "Al conducir en Pensilvania, usted acepta someterse a pruebas químicas de aliento, sangre u orina si es arrestado por sospecha de DUI; negarse suspende automáticamente la licencia por 12 meses",
+    "explicacion": "Al recibir el privilegio de conducir en Pensilvania, la Ley de Consentimiento Implícito estipula que usted consiente a pruebas de sobriedad. Negarse a la prueba química genera una suspensión automática de la licencia por 12 meses (o 18 meses si es reincidente), aun si luego es absuelto del cargo penal."
+  },
+  {
+    "id": 29,
+    "categoria": "grupo4",
+    "pregunta": "¿Cuál es la única manera efectiva de reducir el nivel de alcohol en la sangre (BAC) y recuperar la sobriedad?",
+    "opciones": [
+      "El paso del tiempo",
+      "Tomar varias tazas de café caliente",
+      "Darse una ducha con agua fría",
+      "Hacer ejercicio vigoroso durante 30 minutos"
+    ],
+    "correcta": "El paso del tiempo",
+    "explicacion": "El hígado humano procesa y metaboliza aproximadamente una bebida estándar por hora (12 oz de cerveza, 5 oz de vino o 1.5 oz de licor). Ni el café, ni las duchas frías, ni el ejercicio eliminan el alcohol de la corriente sanguínea; solo el tiempo puede hacerlo."
+  },
+  {
+    "id": 30,
+    "categoria": "grupo4",
+    "pregunta": "¿Qué sucede cuando una persona combina el consumo de alcohol con medicamentos recetados o drogas de venta libre?",
+    "opciones": [
+      "Se produce un efecto sinérgico donde los efectos negativos sobre el juicio y los reflejos se multiplican peligrosamente",
+      "Los medicamentos cancelan el efecto del alcohol y permiten conducir con seguridad",
+      "No existe ningún riesgo si los medicamentos son recetados legalmente por un médico",
+      "Solo afecta a personas mayores de 65 años"
+    ],
+    "correcta": "Se produce un efecto sinérgico donde los efectos negativos sobre el juicio y los reflejos se multiplican peligrosamente",
+    "explicacion": "El alcohol y los fármacos interactúan provocando un efecto multiplicador severo que merma drásticamente la visión, coordinación motora y tiempos de reacción. Conducir bajo los efectos de drogas y alcohol es procesado penalmente como DUI grado máximo."
+  },
+  {
+    "id": 31,
+    "categoria": "grupo4",
+    "pregunta": "¿Qué ley de Pensilvania prohíbe tener botellas o latas abiertas de bebidas alcohólicas dentro del habitáculo de pasajeros?",
+    "opciones": [
+      "La Ley de Contenedor Abierto (Open Container Law)",
+      "La Ley de Tolerancia Cero",
+      "La Ley de Movilidad Segura",
+      "La Ley de Seguridad Juvenil"
+    ],
+    "correcta": "La Ley de Contenedor Abierto (Open Container Law)",
+    "explicacion": "La ley prohíbe expresamente abrir o poseer cualquier recipiente abierto de bebidas alcohólicas en el área de pasajeros de un vehículo en cualquier vía pública del estado, independientemente de si el vehículo está en marcha o detenido."
+  },
+  {
+    "id": 32,
+    "categoria": "grupo5",
+    "pregunta": "¿Qué es la regla de los cuatro segundos (4-Second Rule) recomendada por el manual de PennDOT?",
+    "opciones": [
+      "La distancia de seguimiento segura que debe mantener detrás del vehículo que va adelante en condiciones ideales de manejo",
+      "El tiempo máximo permitido para pasar una luz amarilla en una intersección",
+      "El tiempo que debe esperar antes de tocar la bocina en un embotellamiento",
+      "El tiempo de reacción promedio de un conductor novato ante un obstáculo"
+    ],
+    "correcta": "La distancia de seguimiento segura que debe mantener detrás del vehículo que va adelante en condiciones ideales de manejo",
+    "explicacion": "PennDOT recomienda usar la regla de los 4 segundos: elija un punto fijo en la vía (árbol, poste); cuando el auto que va adelante lo pase, cuente 'mil uno, mil dos, mil tres, mil cuatro'. Si alcanza el objeto antes de terminar de contar, está demasiado cerca."
+  },
+  {
+    "id": 33,
+    "categoria": "grupo5",
+    "pregunta": "¿Qué debe hacer si su vehículo comienza a 'hidroplanear' (deslizarse sobre una capa de agua acumulada en el pavimento)?",
+    "opciones": [
+      "Quitar gradualmente el pie del acelerador, no frenar bruscamente y mantener el volante derecho hasta recuperar la tracción",
+      "Pisar el freno a fondo con fuerza para detener el automóvil de inmediato",
+      "Girar el volante con rapidez de izquierda a derecha para secar las llantas",
+      "Accionar inmediatamente el freno de emergencia"
+    ],
+    "correcta": "Quitar gradualmente el pie del acelerador, no frenar bruscamente y mantener el volante derecho hasta recuperar la tracción",
+    "explicacion": "Durante el hidroplaneo, las ruedas flotan sobre una película de agua perdiendo contacto con el asfalto. Frenar o virar bruscamente provocará un trompo descontrolado. Debe desacelerar con suavidad manteniendo el volante firme."
+  },
+  {
+    "id": 34,
+    "categoria": "grupo5",
+    "pregunta": "¿Qué tipo de luces debe utilizar al conducir en condiciones de niebla espesa, nevada intensa o lluvia torrencial?",
+    "opciones": [
+      "Luces bajas (cortas / low beams)",
+      "Luces altas (largas / high beams)",
+      "Únicamente las luces de estacionamiento (parking lights)",
+      "Apagar los faros y usar solo luces de emergencia intermitentes"
+    ],
+    "correcta": "Luces bajas (cortas / low beams)",
+    "explicacion": "Al conducir en niebla, lluvia o nieve, utilice siempre las luces bajas. Las luces altas rebotan en las gotas de agua o copos de nieve reflejando el destello directamente a sus ojos, lo que reduce la visibilidad y encandila."
+  },
+  {
+    "id": 35,
+    "categoria": "grupo5",
+    "pregunta": "¿Qué exige la ley de Pensilvania respecto al uso de faros delanteros cuando llueve o nieva?",
+    "opciones": [
+      "Siempre que las condiciones climáticas requieran el uso continuo de limpiaparabrisas, es obligatorio encender los faros delanteros",
+      "Solo se requiere encender los faros si es de noche",
+      "Se pueden encender solo las luces traseras sin encender los faros principales",
+      "El uso de faros con lluvia es opcional en autopistas interestatales"
+    ],
+    "correcta": "Siempre que las condiciones climáticas requieran el uso continuo de limpiaparabrisas, es obligatorio encender los faros delanteros",
+    "explicacion": "Bajo la ley de Pensilvania ('Wipers on, lights on'), cualquier conductor cuyos limpiaparabrisas estén en funcionamiento continuo debido a lluvia, aguanieve o nieve está obligado por ley a encender los faros delanteros del vehículo."
+  },
+  {
+    "id": 36,
+    "categoria": "grupo5",
+    "pregunta": "Si los frenos de su automóvil fallan repentinamente mientras conduce, ¿cuál es el procedimiento correcto?",
+    "opciones": [
+      "Bombear el pedal del freno repetidamente, cambiar a una marcha baja y aplicar progresivamente el freno de estacionamiento",
+      "Apagar el motor de inmediato con la llave para que el auto se detenga",
+      "Saltar del vehículo mientras va en marcha hacia el pasto de la banquina",
+      "Pisar a fondo el acelerador para intentar desatascar el sistema hidráulico"
+    ],
+    "correcta": "Bombear el pedal del freno repetidamente, cambiar a una marcha baja y aplicar progresivamente el freno de estacionamiento",
+    "explicacion": "Ante un fallo de frenos: bombear rápidamente el pedal puede reconstruir la presión hidráulica. Si no funciona, cambie a una velocidad inferior (frenado con motor) y aplique el freno de mano gradualmente sin trabar las ruedas."
+  },
+  {
+    "id": 37,
+    "categoria": "grupo5",
+    "pregunta": "¿A qué distancia debe detenerse obligatoriamente ante un cruce de vías de tren cuando un convoy se aproxima?",
+    "opciones": [
+      "Entre 15 y 50 pies del riel más cercano",
+      "A no menos de 100 pies del riel",
+      "A 5 pies de las vías",
+      "A cualquier distancia siempre que el parachoques no toque el riel"
+    ],
+    "correcta": "Entre 15 y 50 pies del riel más cercano",
+    "explicacion": "Cuando se aproximan trenes o se activan señales luminosas, campanas o barreras, la ley de Pensilvania exige detenerse a una distancia de entre 15 y 50 pies del riel más cercano de la vía férrea."
+  },
+  {
+    "id": 38,
+    "categoria": "grupo5",
+    "pregunta": "¿Qué debe hacer si su neumático sufre un reventón repentino (blowout) a alta velocidad?",
+    "opciones": [
+      "Sujetar firmemente el volante con ambas manos, soltar el acelerador gradualmente y orillarse fuera de la carretera una vez reducida la marcha",
+      "Pisar de golpe el freno para no perder el control",
+      "Dar un giro violento al volante en dirección contraria al neumático dañado",
+      "Acelerar para compensar el desequilibrio de las ruedas"
+    ],
+    "correcta": "Sujetar firmemente el volante con ambas manos, soltar el acelerador gradualmente y orillarse fuera de la carretera una vez reducida la marcha",
+    "explicacion": "Un reventón tira con fuerza del vehículo hacia el lado afectado. Clavar los frenos provocará un vuelco o derrape. Mantenga ambas manos firmes en el volante, deje de acelerar y salga de la carretera cuando el auto haya desacelerado."
+  },
+  {
+    "id": 39,
+    "categoria": "grupo6",
+    "pregunta": "¿Cuál es la restricción horaria nocturna para los titulares de una Licencia Junior en Pensilvania?",
+    "opciones": [
+      "No pueden conducir entre las 11:00 p.m. y las 5:00 a.m., salvo acompañados por un padre/tutor o con constancia escrita de trabajo o caridad",
+      "No pueden conducir entre las 8:00 p.m. y las 6:00 a.m. bajo ninguna circunstancia",
+      "No pueden conducir los días domingos y feriados",
+      "Solo pueden conducir durante el horario de salida del sol hasta la puesta del sol"
+    ],
+    "correcta": "No pueden conducir entre las 11:00 p.m. y las 5:00 a.m., salvo acompañados por un padre/tutor o con constancia escrita de trabajo o caridad",
+    "explicacion": "La ley de Licencia de Conducir Junior en Pensilvania prohíbe conducir entre las 11:00 p.m. y las 5:00 a.m. a menos que viaje con padre, tutor legal o posea un certificado de empleo o servicio comunitario voluntario reglamentario."
+  },
+  {
+    "id": 40,
+    "categoria": "grupo6",
+    "pregunta": "¿Cuántos pasajeros menores de 18 años ajenos a la familia inmediata puede transportar un conductor con Licencia Junior durante los primeros 6 meses?",
+    "opciones": [
+      "No más de un (1) pasajero",
+      "Hasta tres (3) pasajeros",
+      "No puede transportar a ningún pasajero",
+      "Tantos como cinturones de seguridad tenga el automóvil"
+    ],
+    "correcta": "No más de un (1) pasajero",
+    "explicacion": "Durante los primeros seis meses de tener una Licencia Junior en Pensilvania, el conductor no puede transportar a más de un pasajero menor de 18 años que no sea miembro directo de su familia inmediata, para minimizar distracciones de conducción."
+  },
+  {
+    "id": 41,
+    "categoria": "grupo6",
+    "pregunta": "Al estacionar su vehículo en una pendiente descendente (cuesta abajo / downhill) donde hay un bordillo o acera, ¿hacia dónde debe girar las ruedas delanteras?",
+    "opciones": [
+      "Hacia el bordillo (a la derecha)",
+      "Hacia el centro de la calle (lejos del bordillo)",
+      "Completamente rectas y paralelas a la calzada",
+      "No importa la dirección si se aplica el freno de mano"
+    ],
+    "correcta": "Hacia el bordillo (a la derecha)",
+    "explicacion": "Al estacionar cuesta abajo con bordillo, gire las ruedas hacia la derecha (hacia el bordillo). De esta forma, si los frenos fallaran, el vehículo rodará contra el bordillo deteniendo su avance hacia el tráfico."
+  },
+  {
+    "id": 42,
+    "categoria": "grupo6",
+    "pregunta": "Al estacionar en una pendiente ascendente (cuesta arriba / uphill) donde hay un bordillo o acera, ¿hacia dónde debe girar las ruedas delanteras?",
+    "opciones": [
+      "Hacia la calle (lejos del bordillo o hacia la izquierda)",
+      "Hacia el bordillo (a la derecha)",
+      "Completamente derechas",
+      "Hacia el lado más cercano a un hidrante"
+    ],
+    "correcta": "Hacia la calle (lejos del bordillo o hacia la izquierda)",
+    "explicacion": "Al estacionar cuesta arriba con bordillo, gire las ruedas delanteras hacia la izquierda (alejándolas del bordillo). Si el auto retrocediera, la parte posterior de la rueda delantera tocaría el bordillo impidiendo que ruede cuesta abajo."
+  },
+  {
+    "id": 43,
+    "categoria": "grupo6",
+    "pregunta": "¿Qué distancia lateral mínima exige la ley de Pensilvania al adelantar a un ciclista en la carretera?",
+    "opciones": [
+      "Al menos 4 pies de distancia lateral a una velocidad prudente",
+      "Al menos 2 pies de distancia",
+      "Al menos 6 pies exclusivamente en autopistas",
+      "Basta con hacer sonar la bocina sin cambiar la distancia lateral"
+    ],
+    "correcta": "Al menos 4 pies de distancia lateral a una velocidad prudente",
+    "explicacion": "La ley de Pensilvania exige que los automovilistas dejen un espacio libre de no menos de 4 pies de distancia al sobrepasar a un ciclista, reduciendo la velocidad a un nivel prudente y seguro."
+  },
+  {
+    "id": 44,
+    "categoria": "grupo6",
+    "pregunta": "¿Qué ocurre bajo el sistema de puntos de PennDOT cuando un conductor acumula 6 o más puntos por primera vez en su registro?",
+    "opciones": [
+      "Debe presentarse y aprobar un examen especial por escrito de conocimientos de manejo dentro de los 30 días, o su licencia será suspendida",
+      "La licencia es revocada de por vida de inmediato",
+      "Debe pagar una fianza de 5,000 dólares",
+      "Se le confisca el automóvil durante 90 días"
+    ],
+    "correcta": "Debe presentarse y aprobar un examen especial por escrito de conocimientos de manejo dentro de los 30 días, o su licencia será suspendida",
+    "explicacion": "Cuando acumula 6 o más puntos por primera vez, PennDOT le notifica que tiene 30 días para aprobar un examen escrito especial sobre seguridad vial. Si no lo aprueba a tiempo, su licencia se suspenderá hasta que cumpla el requisito."
+  },
+  {
+    "id": 45,
+    "categoria": "grupo6",
+    "pregunta": "¿A qué ritmo se reducen los puntos acumulados en el registro de manejo de un conductor en Pensilvania si no comete nuevas infracciones?",
+    "opciones": [
+      "Se restan 3 puntos por cada 12 meses consecutivos completos sin cometer violaciones de tránsito",
+      "Se eliminan todos los puntos al cumplir 21 años",
+      "Se descuenta 1 punto cada 3 años",
+      "Los puntos nunca se borran del registro oficial de PennDOT"
+    ],
+    "correcta": "Se restan 3 puntos por cada 12 meses consecutivos completos sin cometer violaciones de tránsito",
+    "explicacion": "Por cada periodo de 12 meses consecutivos en el que un conductor no reciba ninguna infracción con puntos, PennDOT descontará automáticamente 3 puntos de su registro total hasta alcanzar cero puntos."
+  },
+  {
+    "id": 46,
+    "categoria": "grupo6",
+    "pregunta": "¿Qué exige la ley de Pensilvania respecto al uso de asientos de seguridad infantil para niños menores de 2 años?",
+    "opciones": [
+      "Deben viajar en un asiento de seguridad para niños colocado mirando hacia atrás en el asiento trasero del automóvil",
+      "Pueden viajar en el regazo de un adulto con cinturón compartido",
+      "Pueden viajar en el asiento del copiloto siempre que el airbag esté activo",
+      "Solo necesitan el cinturón de seguridad regular de tres puntos para adultos"
+    ],
+    "correcta": "Deben viajar en un asiento de seguridad para niños colocado mirando hacia atrás en el asiento trasero del automóvil",
+    "explicacion": "La ley de Pensilvania exige que todo niño menor de 2 años viaje asegurado en un asiento infantil orientado hacia atrás (rear-facing car seat) en el asiento posterior hasta que sobrepase los límites de peso y talla del fabricante."
+  }
+]

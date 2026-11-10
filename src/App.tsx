@@ -15,6 +15,7 @@ import { loadUserState, saveUserState, defaultInitialState } from './utils/stora
 import { Navbar } from './components/Navbar';
 import { ExamSimulator } from './components/ExamSimulator';
 import { PracticeMode } from './components/PracticeMode';
+import { QuestionBankView } from './components/QuestionBankView';
 import { SignsCatalog } from './components/SignsCatalog';
 import { StatisticsView } from './components/StatisticsView';
 import { CommunityForum } from './components/CommunityForum';
@@ -151,6 +152,10 @@ export default function App() {
             userState={userState}
             setUserState={setUserState}
           />
+        )}
+
+        {currentTab === 'bank' && (
+          <QuestionBankView language={language} />
         )}
 
         {currentTab === 'signs' && (

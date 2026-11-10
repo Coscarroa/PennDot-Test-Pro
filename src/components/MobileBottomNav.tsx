@@ -1,7 +1,7 @@
-import React from 'react';
 import {
   Car,
   BookOpen,
+  HelpCircle,
   ShieldCheck,
   BarChart3,
   MessageSquare
@@ -34,6 +34,11 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       icon: BookOpen
     },
     {
+      id: 'bank',
+      label: isEs ? 'Banco' : 'Bank',
+      icon: HelpCircle
+    },
+    {
       id: 'signs',
       label: isEs ? 'Señales' : 'Signs',
       icon: ShieldCheck
@@ -45,14 +50,14 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
     },
     {
       id: 'forum',
-      label: isEs ? 'Foro' : 'Forum',
+      label: isEs ? 'Foro Driver' : 'Driver Forum',
       icon: MessageSquare
     }
   ];
 
   return (
     <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_-4px_20px_rgba(0,0,0,0.3)] pb-[max(0.5rem,env(safe-area-inset-bottom))]">
-      <div className="grid grid-cols-5 h-14">
+      <div className="grid grid-cols-6 h-14">
         {navItems.map(item => {
           const Icon = item.icon;
           const active = currentTab === item.id;
