@@ -8,7 +8,10 @@ import {
   ShieldCheck,
   CheckCircle2,
   X,
-  Heart
+  Heart,
+  Mail,
+  Shield,
+  FileText
 } from 'lucide-react';
 import { UserDataState, Language, ThemeMode } from './types';
 import { loadUserState, saveUserState, defaultInitialState } from './utils/storage';
@@ -25,6 +28,8 @@ import { ManualReferenceModal } from './components/ManualReferenceModal';
 import { DonationModal } from './components/DonationModal';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { InstallPwaModal } from './components/InstallPwaModal';
+import { AdBanner } from './components/AdBanner';
+import { LegalModal, LegalModalType } from './components/LegalModals';
 
 interface ToastNotification {
   id: string;
@@ -44,12 +49,36 @@ export default function App() {
   const [isManualModalOpen, setIsManualModalOpen] = useState<boolean>(false);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState<boolean>(false);
   const [isInstallModalOpen, setIsInstallModalOpen] = useState<boolean>(false);
+  const [legalModalType, setLegalModalType] = useState<LegalModalType>(null);
+  const [isMobileAnchorAdVisible, setIsMobileAnchorAdVisible] = useState<boolean>(true);
 
   // Toast notification state
   const [toasts, setToasts] = useState<ToastNotification[]>([]);
 
   const language = userState.language;
   const isEs = language === 'es';
+
+  // Dynamic Canonical & OpenGraph URL for SEO
+  useEffect(() => {
+    const currentUrl = window.location.origin + window.location.pathname;
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = currentUrl;
+
+    let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.content = currentUrl;
+
+    document.documentElement.lang = isEs ? 'es' : 'en';
+  }, [isEs]);
 
   // Apply Theme Mode (light / dark / midnight) to document root
   useEffect(() => {
@@ -134,8 +163,11 @@ export default function App() {
         setSoundEnabled={setSoundEnabled}
       />
 
-      {/* Main Content Area (Extra bottom padding on mobile to clear the thumb-friendly bottom nav bar) */}
-      <main className="flex-1 pb-24 sm:pb-16 px-2 sm:px-0">
+      {/* Top Horizontal Ad Slot right below the main header */}
+      <AdBanner variant="top-leaderboard" language={language} />
+
+      {/* Main Content Area (Extra bottom padding on mobile to clear bottom nav & dismissible mobile anchor ad) */}
+      <main className={`flex-1 sm:pb-16 px-2 sm:px-0 ${isMobileAnchorAdVisible ? 'pb-36' : 'pb-24'}`}>
         {currentTab === 'simulator' && (
           <ExamSimulator
             language={language}
@@ -177,56 +209,110 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer (Safe bottom padding on mobile so it clears bottom nav) */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md py-6 px-4 sm:px-6 mb-14 sm:mb-0">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 text-center sm:text-left">
-            <img
-              src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
-              alt="PennDOT PA Driver Exam Pro"
-              className="w-6 h-6 rounded-md object-contain border border-slate-200 dark:border-slate-700 bg-blue-950"
-            />
-            <span className="font-extrabold text-slate-800 dark:text-slate-200">
-              PennDOT Driver Exam Pro
-            </span>
-            <span className="hidden sm:inline">•</span>
-            <span className="text-[11px] sm:text-xs">
-              {isEs
-                ? 'Basado en el Manual del Conductor de Pensilvania (PUB 95)'
-                : 'Based on official Pennsylvania Driver\'s Manual (PUB 95)'}
-            </span>
+      {/* Footer (Safe bottom padding on mobile so it clears bottom nav & anchor ad) */}
+      <footer
+        className={`border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md py-6 px-4 sm:px-6 sm:mb-0 ${
+          isMobileAnchorAdVisible ? 'mb-28' : 'mb-14'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 text-center sm:text-left">
+              <img
+                src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+                alt="PennDOT PA Driver Exam Pro"
+                className="w-6 h-6 rounded-md object-contain border border-slate-200 dark:border-slate-700 bg-blue-950"
+              />
+              <span className="font-extrabold text-slate-800 dark:text-slate-200">
+                PennDOT PA Driver Exam Pro
+              </span>
+              <span className="hidden sm:inline">•</span>
+              <span className="text-[11px] sm:text-xs">
+                {isEs
+                  ? 'Basado en el Manual del Conductor de Pensilvania (PUB 95)'
+                  : 'Based on official Pennsylvania Driver\'s Manual (PUB 95)'}
+              </span>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                onClick={() => setIsInstallModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-colors cursor-pointer"
+              >
+                <span>📲 {isEs ? 'Instalar App' : 'Install PWA'}</span>
+              </button>
+              <button
+                onClick={() => setIsDonationModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-bold bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 dark:hover:bg-rose-900 transition-colors cursor-pointer"
+              >
+                <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
+                <span>{isEs ? 'Donar' : 'Donate'}</span>
+              </button>
+              <button
+                onClick={() => setIsManualModalOpen(true)}
+                className="hover:underline font-semibold text-blue-600 dark:text-blue-400 cursor-pointer"
+              >
+                {isEs ? 'Manual PDF' : 'PA Handbook'}
+              </button>
+              <button
+                onClick={() => setIsSyncModalOpen(true)}
+                className="hover:underline font-semibold text-slate-600 dark:text-slate-300 cursor-pointer"
+              >
+                {isEs ? 'Sincronizar' : 'Sync Code'}
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <button
-              onClick={() => setIsInstallModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-colors cursor-pointer"
+          {/* Legal Disclaimer & AdSense Required Links */}
+          <div className="pt-4 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
+            <p className="text-[11px] sm:text-xs font-medium text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+              {isEs
+                ? 'Herramienta educativa independiente. No estamos afiliados ni respaldados por PennDOT ni por ninguna entidad gubernamental.'
+                : 'Independent educational tool. We are not affiliated with or endorsed by PennDOT or any government entity.'}
+            </p>
+
+            <nav
+              aria-label={isEs ? 'Enlaces legales y contacto' : 'Legal links and contact'}
+              className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold"
             >
-              <span>📲 {isEs ? 'Instalar App' : 'Install PWA'}</span>
-            </button>
-            <button
-              onClick={() => setIsDonationModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-bold bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200 dark:border-rose-800 hover:bg-rose-100 dark:hover:bg-rose-900 transition-colors cursor-pointer"
-            >
-              <Heart className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
-              <span>{isEs ? 'Donar' : 'Donate'}</span>
-            </button>
-            <button
-              onClick={() => setIsManualModalOpen(true)}
-              className="hover:underline font-semibold text-blue-600 dark:text-blue-400"
-            >
-              {isEs ? 'Manual PDF' : 'PA Handbook'}
-            </button>
-            <button
-              onClick={() => setIsSyncModalOpen(true)}
-              className="hover:underline font-semibold text-slate-600 dark:text-slate-300"
-            >
-              {isEs ? 'Sincronizar' : 'Sync Code'}
-            </button>
-            <span className="text-slate-400">v1.1.0 Cloudflare Ready</span>
+              <button
+                type="button"
+                onClick={() => setLegalModalType('privacy')}
+                className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition-colors cursor-pointer"
+              >
+                <Shield className="w-3.5 h-3.5" />
+                <span>{isEs ? 'Política de Privacidad' : 'Privacy Policy'}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setLegalModalType('terms')}
+                className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition-colors cursor-pointer"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span>{isEs ? 'Términos de Uso' : 'Terms of Use'}</span>
+              </button>
+
+              <a
+                href="mailto:contacto@penndottestpro.com"
+                className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>{isEs ? 'Contacto' : 'Contact'}</span>
+              </a>
+            </nav>
           </div>
         </div>
       </footer>
+
+      {/* Dismissible Mobile Anchor Ad Banner (Mobile Devices Only) */}
+      {isMobileAnchorAdVisible && (
+        <AdBanner
+          variant="mobile-anchor"
+          language={language}
+          onDismiss={() => setIsMobileAnchorAdVisible(false)}
+        />
+      )}
 
       {/* Ergonomic Mobile Bottom Navigation Bar (Smart Thumb Nav for Phones) */}
       <MobileBottomNav
@@ -293,6 +379,12 @@ export default function App() {
       <InstallPwaModal
         isOpen={isInstallModalOpen}
         onClose={() => setIsInstallModalOpen(false)}
+        language={language}
+      />
+
+      <LegalModal
+        type={legalModalType}
+        onClose={() => setLegalModalType(null)}
         language={language}
       />
     </div>

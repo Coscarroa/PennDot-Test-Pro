@@ -28,6 +28,8 @@ import { Question, Language, ExamResult, UserDataState, DifficultyLevel } from '
 import { generatePennDOTMockExam } from '../data/questionsData';
 import { RoadSignSvg } from './RoadSignSvg';
 import { PassingBadgeCertificate } from './PassingBadgeCertificate';
+import { AdBanner } from './AdBanner';
+import { QuickStudyGuide } from './QuickStudyGuide';
 import { sound } from '../utils/sound';
 import { tts } from '../utils/speech';
 import { recordExamResult, toggleBookmarkQuestion } from '../utils/storage';
@@ -463,6 +465,9 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
             </button>
           </div>
         </div>
+
+        {/* Quick Study Guide for SEO & Retention directly below simulator */}
+        <QuickStudyGuide language={language} defaultExpanded={true} />
       </div>
     );
   }
@@ -482,6 +487,9 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
 
     return (
       <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6">
+        {/* Rectangular Ad Slot right before showing the final results panel */}
+        <AdBanner variant="results-rectangle" language={language} />
+
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6 sm:p-10 mb-8">
           {/* Automatic Termination Notice if 4 mistakes reached */}
           {terminatedDueToErrors && (
@@ -961,6 +969,9 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Quick Study Guide below results */}
+        <QuickStudyGuide language={language} defaultExpanded={false} />
       </div>
     );
   }
