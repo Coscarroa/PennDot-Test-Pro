@@ -17,7 +17,8 @@ import {
   WifiOff,
   Heart,
   Smartphone,
-  HelpCircle
+  HelpCircle,
+  Mail
 } from 'lucide-react';
 import { Language, ThemeMode } from '../types';
 import { sound } from '../utils/sound';
@@ -36,6 +37,7 @@ interface NavbarProps {
   onOpenManual: () => void;
   onOpenDonations: () => void;
   onOpenInstallApp?: () => void;
+  onOpenContact?: () => void;
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
 }
@@ -54,6 +56,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenManual,
   onOpenDonations,
   onOpenInstallApp,
+  onOpenContact,
   soundEnabled,
   setSoundEnabled
 }) => {
@@ -281,6 +284,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <Smartphone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                   <span>{isEs ? 'Instalar App' : 'Install App'}</span>
+                </button>
+              )}
+
+              {/* 11. Creator Contact Button */}
+              {onOpenContact && (
+                <button
+                  onClick={onOpenContact}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg border border-amber-400/50 dark:border-amber-500/40 bg-slate-900 text-amber-300 hover:bg-slate-800 font-bold text-xs transition-all shadow-sm cursor-pointer"
+                  title={isEs ? 'Contacto y Perfil del Creador (Cesil Roa)' : 'Creator Profile & Contact (Cesil Roa)'}
+                >
+                  <Mail className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{isEs ? 'Contacto' : 'Contact'}</span>
                 </button>
               )}
             </div>

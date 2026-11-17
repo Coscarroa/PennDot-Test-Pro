@@ -30,6 +30,7 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 import { InstallPwaModal } from './components/InstallPwaModal';
 import { AdBanner } from './components/AdBanner';
 import { LegalModal, LegalModalType } from './components/LegalModals';
+import { CreatorContactModal } from './components/CreatorContactModal';
 
 interface ToastNotification {
   id: string;
@@ -49,6 +50,7 @@ export default function App() {
   const [isManualModalOpen, setIsManualModalOpen] = useState<boolean>(false);
   const [isDonationModalOpen, setIsDonationModalOpen] = useState<boolean>(false);
   const [isInstallModalOpen, setIsInstallModalOpen] = useState<boolean>(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false);
   const [legalModalType, setLegalModalType] = useState<LegalModalType>(null);
   const [isMobileAnchorAdVisible, setIsMobileAnchorAdVisible] = useState<boolean>(true);
 
@@ -159,6 +161,7 @@ export default function App() {
         onOpenManual={() => setIsManualModalOpen(true)}
         onOpenDonations={() => setIsDonationModalOpen(true)}
         onOpenInstallApp={() => setIsInstallModalOpen(true)}
+        onOpenContact={() => setIsContactModalOpen(true)}
         soundEnabled={soundEnabled}
         setSoundEnabled={setSoundEnabled}
       />
@@ -293,13 +296,14 @@ export default function App() {
                 <span>{isEs ? 'Términos de Uso' : 'Terms of Use'}</span>
               </button>
 
-              <a
-                href="mailto:contacto@penndottestpro.com"
-                className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors"
+              <button
+                type="button"
+                onClick={() => setIsContactModalOpen(true)}
+                className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors cursor-pointer"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>{isEs ? 'Contacto' : 'Contact'}</span>
-              </a>
+              </button>
             </nav>
           </div>
         </div>
@@ -386,6 +390,13 @@ export default function App() {
         type={legalModalType}
         onClose={() => setLegalModalType(null)}
         language={language}
+      />
+
+      <CreatorContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        language={language}
+        onOpenSupport={() => setIsDonationModalOpen(true)}
       />
     </div>
   );
