@@ -251,9 +251,15 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6">
             <div className="flex items-center gap-4">
               <img
-                src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+                src="/assets/aistudio/logo_5c27bcf0.png"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes(import.meta.env.BASE_URL)) {
+                    target.src = `${import.meta.env.BASE_URL}assets/aistudio/logo_5c27bcf0.png`;
+                  }
+                }}
                 alt="PennDOT PA Driver Exam Pro"
-                className="w-16 h-16 rounded-2xl object-contain shadow-lg shadow-blue-500/25 shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
+                className="w-[70px] h-[70px] rounded-2xl object-contain shadow-lg shadow-blue-500/25 shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
               />
               <div>
                 <span className="text-xs font-bold tracking-wider uppercase text-blue-600 dark:text-blue-400">

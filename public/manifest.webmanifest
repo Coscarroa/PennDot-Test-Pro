@@ -13,19 +13,19 @@
   "categories": ["education", "utilities"],
   "icons": [
     {
-      "src": "/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png",
+      "src": "/assets/aistudio/logo_5c27bcf0.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png",
+      "src": "/assets/aistudio/logo_5c27bcf0.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png",
+      "src": "/assets/aistudio/logo_5c27bcf0.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

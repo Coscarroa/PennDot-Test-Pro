@@ -116,9 +116,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Centralized Logo & Brand Title */}
           <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-2.5 sm:gap-3.5">
             <img
-              src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+              src="/assets/aistudio/logo_5c27bcf0.png"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes(import.meta.env.BASE_URL)) {
+                  target.src = `${import.meta.env.BASE_URL}assets/aistudio/logo_5c27bcf0.png`;
+                }
+              }}
               alt="PennDOT PA Driver Exam Pro"
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-contain shadow-lg shadow-blue-500/20 shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
+              className="w-[53px] h-[53px] sm:w-[62px] sm:h-[62px] rounded-2xl object-contain shadow-lg shadow-blue-500/20 shrink-0 border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
             />
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -129,10 +135,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                   PUB 95 Official
                 </span>
               </div>
-              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
-                {isEs
-                  ? 'Manual del Conductor de Pensilvania • Simulador Oficial & Práctica Interactiva'
-                  : 'Pennsylvania Driver License Knowledge Test Simulator & Practice'}
+              <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-snug mt-0.5">
+                {isEs ? (
+                  <>
+                    <span className="block">Manual del Conductor de Pensilvania</span>
+                    <span className="block">Simulador Oficial &amp; Práctica Interactiva</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="block">Pennsylvania Driver License Knowledge Test</span>
+                    <span className="block">Official Simulator &amp; Interactive Practice</span>
+                  </>
+                )}
               </p>
             </div>
           </div>

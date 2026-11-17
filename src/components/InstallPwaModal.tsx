@@ -89,9 +89,15 @@ export const InstallPwaModal: React.FC<InstallPwaModalProps> = ({
         {/* Header with App Icon */}
         <div className="flex items-center gap-3.5 mb-5">
           <img
-            src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+            src="/assets/aistudio/logo_5c27bcf0.png"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.includes(import.meta.env.BASE_URL)) {
+                target.src = `${import.meta.env.BASE_URL}assets/aistudio/logo_5c27bcf0.png`;
+              }
+            }}
             alt="PennDOT PA Driver Exam Pro"
-            className="w-14 h-14 rounded-2xl object-contain shadow-md border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
+            className="w-[62px] h-[62px] rounded-2xl object-contain shadow-md border border-slate-200 dark:border-slate-700 bg-blue-950 p-1"
           />
           <div>
             <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-[10px] font-black uppercase tracking-wider mb-1">

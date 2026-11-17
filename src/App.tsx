@@ -222,9 +222,15 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 text-center sm:text-left">
               <img
-                src="/assets/aistudio/PennDOT_PA_Driver_Exam_Pro_5c27bcf0.png"
+                src="/assets/aistudio/logo_5c27bcf0.png"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes(import.meta.env.BASE_URL)) {
+                    target.src = `${import.meta.env.BASE_URL}assets/aistudio/logo_5c27bcf0.png`;
+                  }
+                }}
                 alt="PennDOT PA Driver Exam Pro"
-                className="w-6 h-6 rounded-md object-contain border border-slate-200 dark:border-slate-700 bg-blue-950"
+                className="w-[27px] h-[27px] rounded-md object-contain border border-slate-200 dark:border-slate-700 bg-blue-950"
               />
               <span className="font-extrabold text-slate-800 dark:text-slate-200">
                 PennDOT PA Driver Exam Pro
