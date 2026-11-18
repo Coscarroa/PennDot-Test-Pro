@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { UserDataState, Language, ThemeMode } from './types';
 import { loadUserState, saveUserState, defaultInitialState } from './utils/storage';
+import { trackEvent } from './utils/analytics';
 import { Navbar } from './components/Navbar';
 import { ExamSimulator } from './components/ExamSimulator';
 import { PracticeMode } from './components/PracticeMode';
@@ -129,6 +130,7 @@ export default function App() {
   };
 
   const setLanguage = (lang: Language) => {
+    trackEvent('language_change', { selected_language: lang });
     setUserState(prev => {
       const next = { ...prev, language: lang };
       saveUserState(next);

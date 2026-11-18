@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   BookOpen,
   CheckCircle2,
@@ -21,6 +21,7 @@ import { RoadSignSvg } from './RoadSignSvg';
 import { sound } from '../utils/sound';
 import { tts } from '../utils/speech';
 import { recordQuestionAnswer, toggleBookmarkQuestion } from '../utils/storage';
+import { trackEvent } from '../utils/analytics';
 
 interface PracticeModeProps {
   language: Language;
@@ -70,6 +71,14 @@ export const PracticeMode: React.FC<PracticeModeProps> = ({
 
   const currentQ: Question | undefined = filteredQuestions[currentIndex];
 
+  // Track practice mode start when module or category filter is selected
+  useEffect(() => {
+    trackEvent('exam_start', {
+      exam_mode: `practice_${selectedFilter}`,
+      language: questionLang
+    });
+  }, [selectedFilter]);
+
   const handleSelectOption = (idx: number) => {
     if (selectedAnswer !== null || !currentQ) return;
     setSelectedAnswer(idx);
@@ -79,6 +88,13 @@ export const PracticeMode: React.FC<PracticeModeProps> = ({
     } else {
       sound.playIncorrect();
     }
+
+    trackEvent('question_answered', {
+      is_correct: isCorrect,
+      category: currentQ.category,
+      chapter: currentQ.chapter,
+      question_id: currentQ.id
+    });
 
     const nextState = recordQuestionAnswer(userState, currentQ.id, isCorrect);
     setUserState(nextState);
@@ -209,7 +225,11 @@ export const PracticeMode: React.FC<PracticeModeProps> = ({
 
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setQuestionLang(prev => (prev === 'es' ? 'en' : 'es'))}
+                onClick={() => {
+                  const nextLang = questionLang === 'es' ? 'en' : 'es';
+                  setQuestionLang(nextLang);
+                  trackEvent('language_change', { selected_language: nextLang });
+                }}
                 className="flex items-center gap-1 px-3 py-1 text-xs font-bold rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200"
                 title="Cambiar idioma de la pregunta"
               >

@@ -33,6 +33,7 @@ import { QuickStudyGuide } from './QuickStudyGuide';
 import { sound } from '../utils/sound';
 import { tts } from '../utils/speech';
 import { recordExamResult, toggleBookmarkQuestion } from '../utils/storage';
+import { trackEvent } from '../utils/analytics';
 
 interface ExamSimulatorProps {
   language: Language;
@@ -123,6 +124,12 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
     setTerminatedDueToErrors(false);
     setFilterMissedOnly(false);
     sound.playCorrect();
+
+    trackEvent('exam_start', {
+      exam_mode: customQuestions ? 'mistakes_review' : `real_exam_${diff}`,
+      difficulty: diff,
+      language: activeQuestionLang
+    });
   };
 
   const handleSelectOption = (optionIndex: number) => {
@@ -134,12 +141,21 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
     };
     setUserAnswers(nextAnswers);
 
-    const isCorrect = optionIndex === questions[currentIndex].correctAnswer;
+    const currentQ = questions[currentIndex];
+    const isCorrect = optionIndex === currentQ.correctAnswer;
     if (isCorrect) {
       sound.playCorrect();
     } else {
       sound.playIncorrect();
     }
+
+    trackEvent('question_answered', {
+      is_correct: isCorrect,
+      category: currentQ.category,
+      chapter: currentQ.chapter,
+      question_id: currentQ.id,
+      exam_mode: 'real_exam'
+    });
 
     // Check errors count
     let totalErrors = 0;
@@ -216,6 +232,15 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
 
     setTerminatedDueToErrors(isTerminatedByErrors);
     setExamFinished(true);
+
+    trackEvent('exam_complete', {
+      score,
+      total_questions: questions.length,
+      passed,
+      percentage,
+      difficulty,
+      terminated_due_to_errors: isTerminatedByErrors
+    });
 
     if (passed) {
       sound.playExamPass();
@@ -1066,7 +1091,9 @@ export const ExamSimulator: React.FC<ExamSimulatorProps> = ({
             {/* Language Switcher */}
             <button
               onClick={() => {
-                setActiveQuestionLang(prev => (prev === 'es' ? 'en' : 'es'));
+                const nextLang = activeQuestionLang === 'es' ? 'en' : 'es';
+                setActiveQuestionLang(nextLang);
+                trackEvent('language_change', { selected_language: nextLang });
                 sound.playCorrect();
               }}
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
